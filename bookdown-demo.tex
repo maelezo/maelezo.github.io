@@ -24,8 +24,8 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 \hypersetup{unicode=true,
-            pdftitle={A Minimal Book Example},
-            pdfauthor={Yihui Xie},
+            pdftitle={Introduction to R Programming},
+            pdfauthor={David Beskow},
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
@@ -116,10 +116,10 @@
 }
 
 \setlength{\droptitle}{-2em}
-  \title{A Minimal Book Example}
+  \title{Introduction to R Programming}
   \pretitle{\vspace{\droptitle}\centering\huge}
   \posttitle{\par}
-  \author{Yihui Xie}
+  \author{David Beskow}
   \preauthor{\centering\large\emph}
   \postauthor{\par}
   \predate{\centering\large\emph}
@@ -142,16 +142,11 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\chapter{Basics of R Programming}\label{basics-of-r-programming}
-
-\section{Purpose of Course}\label{purpose-of-course}
-
 These five lessons are designed to provide a person with the fundamental
 understanding of the R Programming language. It will cover data
 structures, data manipulation, as well as basic data visualization. The
 recommended learning approach is to install R and RStudio on a computer
 or cloud node, and follow along with the provided material and videos.
-To compile this example to PDF, you need to install XeLaTeX.
 
 \chapter{Basic Data Structures}\label{basic-data-structures}
 
@@ -907,8 +902,6 @@ out the arguments for a function.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
 \section{Practice Problem}\label{practice-problem}
 
 Download the Korean War Casualty Data by downloading the Comma Separated
@@ -1334,9 +1327,10 @@ manipulation. There a many different ways to filter data in R. In
 addition to using the \emph{bracket} functionality discussed above, you
 could use the \texttt{subset} command provided in Base R. Today, one of
 the foremost R Programming Developers (Hadley Wickam) has developed a
-special packages called \texttt{dplyr} and \texttt{tidyr} just for data
-wrangling. For the sake of simplicity, we will attempt to primarily use
-these packages for data wrangling in this course.
+special packages called \texttt{dplyr} {[}\citep{R-dplyr} and
+\texttt{tidyr} \citep{R-tidyr} just for data wrangling. For the sake of
+simplicity, we will attempt to primarily use these packages for data
+wrangling in this course.
 
 \includegraphics{dplyr.png} \includegraphics{tidyr.png}
 
@@ -1468,10 +1462,11 @@ We see that we only have two columns, but still have all 33,899 rows.
 The code below is beyond the extent of this lesson on filtering (it
 contains some code we'll go over in Lesson 5) but is interesting to look
 at the difference between incident date and fatality date. In this code
-we will load the \texttt{lubridate} package (another package written by
-Hadley Wickam) and use it to convert these two columns to date format
-and calculate the difference between them (i.e.~the number of days
-between the incident that the death of the Service Member).
+we will load the \texttt{lubridate} package \citep{R-lubridate} (another
+package written by Hadley Wickam) and use it to convert these two
+columns to date format and calculate the difference between them
+(i.e.~the number of days between the incident that the death of the
+Service Member).
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1565,8 +1560,8 @@ primary cleaning functions that we performed last lesson.
 
 Now that we have the data in memory, we will use some basic
 visualizations to explore the data. In this lesson, we will primarily
-use visualizations from the ggplot2 package. If you haven't installed
-this package yet, run the command
+use visualizations from the ggplot2 package \citep{R-ggplot2}. If you
+haven't installed this package yet, run the command
 \texttt{install.packages(\textquotesingle{}ggplot2\textquotesingle{})}.
 
 \section{Video on basics of ggplot2}\label{video-on-basics-of-ggplot2}
@@ -2050,7 +2045,8 @@ has a special class or format that it uses to work with dates.
 
 We will start by showing a few of the date commands that are built into
 the Base R package (later on we will take a look at the \emph{lubridate}
-package, which has some more user friendly functions.)
+package \citep{R-lubridate}, which has some more user friendly
+functions.)
 
 First we will demonstrate a couple commands that will generate the
 current date for your system (either your physical computer or your
@@ -2076,7 +2072,7 @@ Greenwich Mean Time:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2017-04-10 22:27:46 EDT"
+## [1] "2017-04-10 23:36:01 EDT"
 \end{verbatim}
 
 Note that if we check the class of either one of these objects, that
