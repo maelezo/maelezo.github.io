@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>A Minimal Book Example</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook.">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="A Minimal Book Example" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="A Minimal Book Example" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Yihui Xie">
+
+
+<meta name="date" content="2017-04-10">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="introduction-to-dates-in-r.html">
+<link rel="next" href="references.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="2" data-path="basic-data-structures.html"><a href="basic-data-structures.html"><i class="fa fa-check"></i><b>2</b> Basic Data Structures</a><ul>
+<li class="chapter" data-level="2.1" data-path="basic-data-structures.html"><a href="basic-data-structures.html#purpose-of-course"><i class="fa fa-check"></i><b>2.1</b> Purpose of Course</a></li>
+<li class="chapter" data-level="2.2" data-path="basic-data-structures.html"><a href="basic-data-structures.html#the-r-programming-language"><i class="fa fa-check"></i><b>2.2</b> The R Programming Language</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="basic-data-structures.html"><a href="basic-data-structures.html#r-or-python"><i class="fa fa-check"></i><b>2.2.1</b> R or Python?</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="basic-data-structures.html"><a href="basic-data-structures.html#installation"><i class="fa fa-check"></i><b>2.3</b> Installation</a></li>
+<li class="chapter" data-level="2.4" data-path="basic-data-structures.html"><a href="basic-data-structures.html#r-environment-and-workspace"><i class="fa fa-check"></i><b>2.4</b> R Environment and Workspace</a></li>
+<li class="chapter" data-level="2.5" data-path="basic-data-structures.html"><a href="basic-data-structures.html#types-and-shape-of-data"><i class="fa fa-check"></i><b>2.5</b> Types and Shape of Data</a></li>
+<li class="chapter" data-level="2.6" data-path="basic-data-structures.html"><a href="basic-data-structures.html#data-types"><i class="fa fa-check"></i><b>2.6</b> Data Types</a></li>
+<li class="chapter" data-level="2.7" data-path="basic-data-structures.html"><a href="basic-data-structures.html#data-structures"><i class="fa fa-check"></i><b>2.7</b> Data Structures</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="basic-data-structures.html"><a href="basic-data-structures.html#vector-data-structure"><i class="fa fa-check"></i><b>2.7.1</b> Vector Data Structure</a></li>
+<li class="chapter" data-level="2.7.2" data-path="basic-data-structures.html"><a href="basic-data-structures.html#data-frame-data-structure"><i class="fa fa-check"></i><b>2.7.2</b> Data Frame Data Structure</a></li>
+<li class="chapter" data-level="2.7.3" data-path="basic-data-structures.html"><a href="basic-data-structures.html#list-data-structure"><i class="fa fa-check"></i><b>2.7.3</b> List Data Structure</a></li>
+<li class="chapter" data-level="2.7.4" data-path="basic-data-structures.html"><a href="basic-data-structures.html#matrix-data-structure"><i class="fa fa-check"></i><b>2.7.4</b> Matrix Data Structure</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="basic-data-structures.html"><a href="basic-data-structures.html#inputoutput-data"><i class="fa fa-check"></i><b>2.8</b> Input/Output Data</a></li>
+<li class="chapter" data-level="2.9" data-path="basic-data-structures.html"><a href="basic-data-structures.html#getting-help"><i class="fa fa-check"></i><b>2.9</b> Getting Help</a></li>
+<li class="chapter" data-level="2.10" data-path="basic-data-structures.html"><a href="basic-data-structures.html#practice-problem"><i class="fa fa-check"></i><b>2.10</b> Practice Problem</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>3</b> Introduction</a></li>
+<li class="chapter" data-level="4" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>4</b> Literature</a></li>
+<li class="chapter" data-level="5" data-path="basic-data-manipulation.html"><a href="basic-data-manipulation.html"><i class="fa fa-check"></i><b>5</b> Basic Data Manipulation</a><ul>
+<li class="chapter" data-level="5.1" data-path="basic-data-manipulation.html"><a href="basic-data-manipulation.html#data"><i class="fa fa-check"></i><b>5.1</b> Data</a></li>
+<li class="chapter" data-level="5.2" data-path="basic-data-manipulation.html"><a href="basic-data-manipulation.html#cell-level-data-access"><i class="fa fa-check"></i><b>5.2</b> Cell level data access</a></li>
+<li class="chapter" data-level="5.3" data-path="basic-data-manipulation.html"><a href="basic-data-manipulation.html#table-command-and-an-example-of-data-cleaning"><i class="fa fa-check"></i><b>5.3</b> <code>Table</code> Command (and an example of data “cleaning”)</a></li>
+<li class="chapter" data-level="5.4" data-path="basic-data-manipulation.html"><a href="basic-data-manipulation.html#filter-or-subset-data"><i class="fa fa-check"></i><b>5.4</b> Filter (or subset) data</a></li>
+<li class="chapter" data-level="5.5" data-path="basic-data-manipulation.html"><a href="basic-data-manipulation.html#using-the-grep-and-aggregate-commands"><i class="fa fa-check"></i><b>5.5</b> Using the grep and aggregate commands</a></li>
+<li class="chapter" data-level="5.6" data-path="basic-data-manipulation.html"><a href="basic-data-manipulation.html#summary"><i class="fa fa-check"></i><b>5.6</b> Summary</a></li>
+<li class="chapter" data-level="5.7" data-path="basic-data-manipulation.html"><a href="basic-data-manipulation.html#homework"><i class="fa fa-check"></i><b>5.7</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>6</b> Methods</a></li>
+<li class="chapter" data-level="7" data-path="basic-visualization.html"><a href="basic-visualization.html"><i class="fa fa-check"></i><b>7</b> Basic Visualization</a><ul>
+<li class="chapter" data-level="7.1" data-path="basic-visualization.html"><a href="basic-visualization.html#video-on-basics-of-ggplot2"><i class="fa fa-check"></i><b>7.1</b> Video on basics of ggplot2</a></li>
+<li class="chapter" data-level="7.2" data-path="basic-visualization.html"><a href="basic-visualization.html#basic-statistical-plots"><i class="fa fa-check"></i><b>7.2</b> Basic statistical plots</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>8</b> Applications</a><ul>
+<li class="chapter" data-level="8.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>8.1</b> Example one</a></li>
+<li class="chapter" data-level="8.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>8.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="introduction-to-control-structures.html"><a href="introduction-to-control-structures.html"><i class="fa fa-check"></i><b>9</b> Introduction to Control Structures</a><ul>
+<li class="chapter" data-level="9.1" data-path="introduction-to-control-structures.html"><a href="introduction-to-control-structures.html#if---else-statements"><i class="fa fa-check"></i><b>9.1</b> If - else Statements</a></li>
+<li class="chapter" data-level="9.2" data-path="introduction-to-control-structures.html"><a href="introduction-to-control-structures.html#loops"><i class="fa fa-check"></i><b>9.2</b> Loops</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="introduction-to-dates-in-r.html"><a href="introduction-to-dates-in-r.html"><i class="fa fa-check"></i><b>10</b> Introduction to Dates in R</a><ul>
+<li class="chapter" data-level="10.1" data-path="introduction-to-dates-in-r.html"><a href="introduction-to-dates-in-r.html#dates-with-base-r"><i class="fa fa-check"></i><b>10.1</b> Dates with Base R</a></li>
+<li class="chapter" data-level="10.2" data-path="introduction-to-dates-in-r.html"><a href="introduction-to-dates-in-r.html#dates-with-the-lubridate-package"><i class="fa fa-check"></i><b>10.2</b> Dates with the Lubridate Package</a></li>
+<li class="chapter" data-level="10.3" data-path="introduction-to-dates-in-r.html"><a href="introduction-to-dates-in-r.html#posixct-and-posixlt"><i class="fa fa-check"></i><b>10.3</b> POSIXct and POSIXlt</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>11</b> Final Words</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Minimal Book Example</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="final-words" class="section level1">
+<h1><span class="header-section-number">Chapter 11</span> Final Words</h1>
+<p>We have finished a nice book.</p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduction-to-dates-in-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/05-summary.Rmd",
+"text": "Edit"
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
