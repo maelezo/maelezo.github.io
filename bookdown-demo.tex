@@ -25,7 +25,7 @@
 \usepackage{hyperref}
 \hypersetup{unicode=true,
             pdftitle={Introduction to R Programming},
-            pdfauthor={David Beskow},
+            pdfauthor={DSCOE Team},
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
@@ -119,12 +119,12 @@
   \title{Introduction to R Programming}
   \pretitle{\vspace{\droptitle}\centering\huge}
   \posttitle{\par}
-  \author{David Beskow}
+  \author{DSCOE Team}
   \preauthor{\centering\large\emph}
   \postauthor{\par}
   \predate{\centering\large\emph}
   \postdate{\par}
-  \date{2017-04-10}
+  \date{2017-04-11}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -142,13 +142,13 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\chapter{Basic Data Structures}\label{basic-data-structures}
-
 These five lessons are designed to provide a person with the fundamental
 understanding of the R Programming language. It will cover data
 structures, data manipulation, as well as basic data visualization. The
 recommended learning approach is to install R and RStudio on a computer
 or cloud node, and follow along with the provided material and videos.
+
+\chapter{Basic Data Structures}\label{basic-data-structures}
 
 \section{The R Programming Language}\label{the-r-programming-language}
 
@@ -261,19 +261,19 @@ opening Windows Explorer, you can use the command
 
 \begin{verbatim}
 ##  [1] "01-fundamentals.Rmd"  "02-munging.Rmd"       "03-visualization.Rmd"
-##  [4] "04-control.Rmd"       "05-dates.Rmd"         "06-references.Rmd"   
-##  [7] "_book"                "book.bib"             "bookdown-demo_files" 
-## [10] "bookdown-demo.Rmd"    "bookdown-demo.Rproj"  "_bookdown_files"     
-## [13] "_bookdown.yml"        "_build.sh"            "dataframe.PNG"       
-## [16] "dataWrangling.jpg"    "_deploy.sh"           "DESCRIPTION"         
-## [19] "dplyr.png"            "environment.PNG"      "facebook.png"        
-## [22] "filterColumn.PNG"     "filterRow.PNG"        "index.Rmd"           
-## [25] "KoreanConflict.csv"   "LICENSE"              "list.PNG"            
-## [28] "matrix.PNG"           "_output.yml"          "packages.bib"        
-## [31] "preamble.tex"         "rating2.csv"          "README.md"           
-## [34] "screen1.png"          "style.css"            "summer.csv"          
-## [37] "tidyr.png"            "toc.css"              "vector.PNG"          
-## [40] "whyR2.PNG"            "whyR.PNG"
+##  [4] "04-control.Rmd"       "05-dates.Rmd"         "06-exam.Rmd"         
+##  [7] "07-references.Rmd"    "_book"                "book.bib"            
+## [10] "bookdown-demo_files"  "bookdown-demo.Rmd"    "bookdown-demo.Rproj" 
+## [13] "_bookdown_files"      "_bookdown.yml"        "_build.sh"           
+## [16] "dataframe.PNG"        "dataWrangling.jpg"    "_deploy.sh"          
+## [19] "DESCRIPTION"          "dplyr.png"            "environment.PNG"     
+## [22] "facebook.png"         "filterColumn.PNG"     "filterRow.PNG"       
+## [25] "index.Rmd"            "KoreanConflict.csv"   "LICENSE"             
+## [28] "list.PNG"             "matrix.PNG"           "_output.yml"         
+## [31] "packages.bib"         "preamble.tex"         "rating2.csv"         
+## [34] "README.md"            "screen1.png"          "style.css"           
+## [37] "summer.csv"           "tidyr.png"            "toc.css"             
+## [40] "vector.PNG"           "whyR2.PNG"            "whyR.PNG"
 \end{verbatim}
 
 Note that this gives the names of the files in your working directory,
@@ -696,7 +696,7 @@ Below is an example of creating a matrix object in R:
 ## [2,]   11   12   13
 \end{verbatim}
 
-As mentioned above, we will not use matrices much in OS401.
+As mentioned above, we will not use matrices much in this course.
 
 \section{Input/Output Data}\label{inputoutput-data}
 
@@ -1019,7 +1019,7 @@ use
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{kor[}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{:}\DecValTok{5}\NormalTok{),}\DecValTok{1}\NormalTok{] ##First five entries from the first column}
+\NormalTok{kor[}\DecValTok{1}\NormalTok{:}\DecValTok{5}\NormalTok{,}\DecValTok{1}\NormalTok{] ##First five entries from the first column}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1218,7 +1218,7 @@ that comes in the \texttt{dplyr} package.
 \end{Highlighting}
 \end{Shaded}
 
-In the code above, the \texttt{is.na} function produces a boolean vector
+In the code above, the \texttt{is.na} function produces a Boolean vector
 with TRUE values if an NA value is found. The exclamation point means
 NOT, and changes every TRUE to a FALSE (meaning it now produces a TRUE
 value if there is NOT an NA in that cell). By feeding this into our
@@ -1336,8 +1336,9 @@ wrangling in this course.
 
 Given a two dimensional data structure, we can think of several ways we
 might want to extract data. The first is to extract rows associated with
-a certain feature. For example, if we had some basic data from an APFT
-test, we may want to extract rows based on GENDER, as seen below.
+a certain feature. For example, if we had some basic data from an Army
+Physical Fitness (APFT) test, we may want to extract rows based on
+GENDER, as seen below.
 
 \begin{figure}[htbp]
 \centering
@@ -1393,7 +1394,7 @@ the data further, you will learn that both women were in the Air Force
 and died in a non-hostile accident in 1952 on the same day (presumably
 the same accident).
 
-Note that we can also filter rows based on a boolean function. For
+Note that we can also filter rows based on a Boolean function. For
 example, if we wanted to only look at casualties that were over 30 years
 old in 1950, we could filter with the following \texttt{dplyr} command:
 
@@ -1420,7 +1421,7 @@ Running this command we find that 1,991 of the casualties were in their
 Now that we've filtered by row, let's show how to filter by column.
 We've already demonstrated above how to do this with the bracket
 notation, now we will illustrate how to do this using the \texttt{dplyr}
-pacakge. We often find that we've loaded data that has many columns that
+package. We often find that we've loaded data that has many columns that
 we're not interested in. In these cases, it is often helpful to extract
 the columns that we're interested in. This will also shrink the size of
 our data in memory, and make our code run faster. In the picture below,
@@ -1434,9 +1435,10 @@ extracting the demographic and raw score columns):
 \end{figure}
 
 Let's say we were studying the Korean Casualty data to understand the
-time factor of those who died of wounds, and were particulary interested
-in the time between \texttt{INCIDENT\_DATE} and \texttt{FATALITY\_DATE}.
-Below we'll extract these two columns with the \texttt{dplyr} package:
+time factor of those who died of wounds, and were particularly
+interested in the time between \texttt{INCIDENT\_DATE} and
+\texttt{FATALITY\_DATE}. Below we'll extract these two columns with the
+\texttt{dplyr} package:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1520,21 +1522,28 @@ to evaluate the temporal aspect of wound care with this data.
 commands}\label{using-the-grep-and-aggregate-commands}
 
 The following video illustrates how to use the grep and aggregate
-commands.
+commands. This video will use movie rating data that you downloaded in
+Lesson 1.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{download.file}\NormalTok{(}\StringTok{"https://s3.amazonaws.com/dscoe-data/rating2.csv"}\NormalTok{, }\DataTypeTok{destfile =} \StringTok{"rating2.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
 \section{Summary}\label{summary}
 
 What we have seen is that R produces a great platform to rapidly
 ``wrangle'' and explore data.
 
-\section{Homework}\label{homework}
+\section{Practice Problem}\label{practice-problem-1}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Use grep to determine how many casualties had ``infantry'' somewhere
-  in their title
+  Use grep to determine how many casualties had *INFANTRY somewhere in
+  their title (use the \texttt{POSITION} field).
 \end{enumerate}
 
 \chapter{Basic Visualization}\label{basic-visualization}
@@ -1564,13 +1573,10 @@ use visualizations from the ggplot2 package \citep{R-ggplot2}. If you
 haven't installed this package yet, run the command
 \texttt{install.packages(\textquotesingle{}ggplot2\textquotesingle{})}.
 
-\section{Video on basics of ggplot2}\label{video-on-basics-of-ggplot2}
+\section{Bar Plot}\label{bar-plot}
 
-\section{Basic statistical plots}\label{basic-statistical-plots}
-
-We will start by producing a basic barplot of categorical variables. We
-will start by plotting the barplot of \emph{BRANCH} for the Korean
-Casualties.
+We will start by producing a basic barplot of categorical variables.
+First we'll look at the \texttt{BRANCH} field for the Korean Casualties.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1579,7 +1585,14 @@ Casualties.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-58-1.pdf}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-59-1.pdf}
+
+At first this command isn't very intuitive. The \texttt{ggplot} command
+is used with all visualizations. In this command it says that we will
+create a visualization of the \texttt{kor} data set, and particularly
+look at the \texttt{BRANCH} variable. The next command says to take this
+specific field and create a barplot (we could create other plots with
+this data as well.)
 
 If we wanted to improve the color scheme, we could add
 \texttt{fill\ =\ BRANCH}.
@@ -1590,7 +1603,7 @@ If we wanted to improve the color scheme, we could add
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-59-1.pdf}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-60-1.pdf}
 
 Now, let's add a title. Additionally, we will get rid of the legend,
 since it the labels are already on the axis.
@@ -1602,7 +1615,7 @@ since it the labels are already on the axis.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-60-1.pdf}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-61-1.pdf}
 
 What if we wanted to stacked barplot? Say we wanted to see how the
 distribution of ETHNICITY in the service BRANCHES. First, let's take a
@@ -1633,7 +1646,8 @@ look at our categories:
 \end{verbatim}
 
 These are rather long names to display on a chart. We will start by
-creating shorter names. We can do this in the code below:
+creating shorter names. We can do this in the code below using the
+``grep command that we learned in Lesson 2:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1651,16 +1665,18 @@ Now all we have to do to change in our previous code is to change the
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-63-1.pdf}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-64-1.pdf}
+
+\section{Pie Plot}\label{pie-plot}
 
 Statisticians will generally tell you that you should never use a Pie
-Plot (usually a bar plot is recommended because it is easier for a human
-eye to distinguish differences in magnitude). That being said, there are
-still a few occasional times when a pie plot is necessary. For this
-plot, we are going to use a function from the BASE graphics package
+Plot (usually a bar plot is recommended because it is easier for the
+human eye to distinguish differences in magnitude). That being said,
+there are still a few occasional times when a pie plot is necessary. For
+this plot, we are going to use a function from the BASE graphics package
 (this comes with R and you don't have to load it). The pie plot is very
-easy to produce if we wrap the \texttt{pie()} command around the table
-function:
+easy to produce if we wrap the \texttt{pie()} command around the
+\texttt{table} command:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1668,48 +1684,81 @@ function:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-64-1.pdf}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-65-1.pdf}
+
+\section{Histogram Plot}\label{histogram-plot}
+
+Now we'll take a look at several ways to create \emph{histograms} in R.
+This is where R will quickly outshine Microsoft Excel and other
+spreadsheet programs. While Excel can create a barplot just like R, it
+is extremely time consuming to create a \emph{histogram} in Excel,
+whereas R can create one in one line code.
+
+Let's create a histogram of the age or each Korean Casualty. Notice that
+we don't have a field that has \emph{age} in it, but we do have the
+\texttt{BIRTH\_YEAR} and \texttt{FATALITY\_YEAR}. The calculation below
+will create a new field that is the \texttt{AGE} of the casualty at
+death (notice that we remove all records with a \texttt{FATALITY\_DATE}
+after 1960 in order to remove those who were MIA and declared dead at a
+later time).
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{kor$FATALITY_YEAR <-}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(kor$FATALITY_YEAR)}
+\CommentTok{# Filter our MIA}
+\NormalTok{kor2 <-}\StringTok{ }\NormalTok{dplyr::}\KeywordTok{filter}\NormalTok{(kor, FATALITY_DATE <}\StringTok{ }\DecValTok{1960}\NormalTok{) }
+
+\CommentTok{# Coerce to numeric}
+\NormalTok{kor2$FATALITY_YEAR <-}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(kor2$FATALITY_YEAR)  }
+\NormalTok{kor2$BIRTH_YEAR <-}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(kor2$BIRTH_YEAR)}
+
+\CommentTok{# Create AGE field}
+\NormalTok{kor2$AGE <-}\StringTok{ }\NormalTok{kor2$FATALITY_YEAR -}\StringTok{ }\NormalTok{kor2$BIRTH_YEAR      }
 \end{Highlighting}
 \end{Shaded}
 
-\begin{verbatim}
-## Warning: NAs introduced by coercion
-\end{verbatim}
+Now that we've created the \texttt{AGE} field, we will use two different
+techniques to create a histogram. The Base R package has a histogram
+function that is easy to use and helpful for exploring data.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{kor$AGE <-}\StringTok{ }\NormalTok{kor$FATALITY_YEAR -}\StringTok{ }\NormalTok{kor$BIRTH_YEAR}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{ggplot}\NormalTok{(kor, }\KeywordTok{aes}\NormalTok{(AGE)) +}\StringTok{ }\KeywordTok{geom_histogram}\NormalTok{() +}\StringTok{ }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{'Korean Casualty Age Distribution'}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-\end{verbatim}
-
-\begin{verbatim}
-## Warning: Removed 1146 rows containing non-finite values (stat_bin).
-\end{verbatim}
-
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-66-1.pdf}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{##change to horizontal}
-\KeywordTok{ggplot}\NormalTok{(kor, }\KeywordTok{aes}\NormalTok{(STATE_CODE)) +}\StringTok{ }\KeywordTok{geom_bar}\NormalTok{() +}\StringTok{ }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{'Korean Casualty Age Distribution'}\NormalTok{) }
+\KeywordTok{hist}\NormalTok{(kor2$AGE, }\DataTypeTok{freq=}\OtherTok{TRUE}\NormalTok{, }\DataTypeTok{main =} \StringTok{"Historgram of Age"}\NormalTok{, }\DataTypeTok{xlab =} \StringTok{"AGE"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-67-1.pdf}
+
+The \texttt{ggplot2} package also has the ability to generate a
+histogram that is generally better for presentations.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ggplot}\NormalTok{(kor2, }\KeywordTok{aes}\NormalTok{(AGE)) +}\StringTok{ }\KeywordTok{geom_histogram}\NormalTok{() +}\StringTok{ }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{'Korean Casualty Age Distribution'}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-68-1.pdf}
+
+\section{Time Series Plot}\label{time-series-plot}
+
+Time series plots (and line plots in general) are helpful in visually
+identifying trends and anomalies in data. We are going to change our
+data sets to look at the Olympic data. This data set is the data on all
+Olympic metals for the Summer Olympics from 1896 to 2012. This data set
+is available here:
+
+\url{https://s3.amazonaws.com/dscoe-data/summer.csv}
+
+You can download the file with the following command:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{download.file}\NormalTok{(}\StringTok{"https://s3.amazonaws.com/dscoe-data/summer.csv"}\NormalTok{, }\DataTypeTok{destfile =} \StringTok{"summer.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Now that you've acquired the data, read it into R and take a look at its
+structure with the following two commands:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1731,19 +1780,56 @@ function:
 ##  $ Medal     : chr  "Gold" "Silver" "Bronze" "Gold" ...
 \end{verbatim}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{oly_sum <-}\StringTok{ }\KeywordTok{aggregate}\NormalTok{(Athlete ~}\StringTok{ }\NormalTok{Year +}\StringTok{ }\NormalTok{Gender, }\DataTypeTok{data=}\NormalTok{oly ,length)}
-\end{Highlighting}
-\end{Shaded}
+Let's say that we want to explore the trend of increased numbers of
+women participating in the Summer Olympics over the past century. To do
+this we could start by aggregating the number of Olympic medals by
+\texttt{Year} and \texttt{Gender}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{ggplot}\NormalTok{(oly_sum, }\KeywordTok{aes}\NormalTok{(Year,Athlete,}\DataTypeTok{group =} \NormalTok{Gender, }\DataTypeTok{color =} \NormalTok{Gender)) +}\StringTok{ }\KeywordTok{geom_line}\NormalTok{() +}\StringTok{ }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{'Summer Olympic Metals by Gender'}\NormalTok{)}
+\NormalTok{oly_sum <-}\StringTok{ }\KeywordTok{aggregate}\NormalTok{(Athlete ~}\StringTok{ }\NormalTok{Year +}\StringTok{ }\NormalTok{Gender, }\DataTypeTok{data=}\NormalTok{oly, length)}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-70-1.pdf}
+Let's take a look at the first few lines of this new data set to make
+sure that it aggregated the data as we anticipated:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{head}\NormalTok{(oly_sum)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Year Gender Athlete
+## 1 1896    Men     151
+## 2 1900    Men     501
+## 3 1904    Men     458
+## 4 1908    Men     789
+## 5 1912    Men     855
+## 6 1920    Men    1255
+\end{verbatim}
+
+Everything looks good. Now we have a data set that we can use to create
+a time series line plot. We create this plot below:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ggplot}\NormalTok{(oly_sum, }\KeywordTok{aes}\NormalTok{(Year, Athlete, }\DataTypeTok{group =} \NormalTok{Gender, }\DataTypeTok{color =} \NormalTok{Gender)) +}\StringTok{ }\KeywordTok{geom_line}\NormalTok{() +}\StringTok{ }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{'Summer Olympic Metals by Gender'}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-73-1.pdf}
+
+From this graph we see that there was significant growth in the
+participation of women in the Olympics starting in the 1970's (we also
+see an interesting spike in the number of medals for men in the 1920's
+that we could explore if desired).
+
+Now let's select a few of the prominent countries in the Summer Olympics
+(we'll look at the permanent members of the UN Security Council: United
+States, Great Britain, France, China, and Russia). To start this let's
+first look at the table of countries listed in the data set.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1775,11 +1861,20 @@ function:
 ##    1    7  173 2049   76 4585   20   12    2  435    2   23   48
 \end{verbatim}
 
+Studying this data a bit, we see that the ISO-3 code for Russia changed
+from \emph{URS} to \emph{RUS} after the fall of the Soviet Union. For
+our analysis, we will change all \emph{USR} data to \emph{RUS}.
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{oly$Country[oly$Country==}\StringTok{"URS"}\NormalTok{] <-}\StringTok{ "RUS"}
 \end{Highlighting}
 \end{Shaded}
+
+Now will will aggregate the data by \texttt{Year} and \texttt{Country}
+as well as filter out the counties we are interested in (notice how we
+create a vector of our five countries and then use the \texttt{\%in\%}
+function to filter out multiple countries):
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1791,25 +1886,43 @@ function:
 \end{Highlighting}
 \end{Shaded}
 
+Having completed this, we will now plot a time series plot by country
+for the last century.
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{ggplot}\NormalTok{(oly_country2, }\KeywordTok{aes}\NormalTok{(Year,Medal,}\DataTypeTok{group =} \NormalTok{Country, }\DataTypeTok{color =} \NormalTok{Country)) +}\StringTok{ }\KeywordTok{geom_line}\NormalTok{() +}\StringTok{ }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{'Summer Olympic Metals by Country'}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-74-1.pdf}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-77-1.pdf}
+
+This plot highlights a bit of the history of the summer Olympics. Note
+that Russia began competing in the 1950's and China didn't begin
+competing until the mid-1980's. While the US has the longest sustained
+volume, Russia has the highest number in a single year (1980). While
+Great Britain had a surge at the turn of the century, it has decreased
+to \textasciitilde{}50 medals in the 1920's, and stayed near this mark
+for most the century (as has France).
+
+\section{Practice Problem}\label{practice-problem-2}
+
+Using the Olympic Data and Google, try to recreate the plot below with a
+horizontal barplot and bars ordered by volume of medals.
+
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-78-1.pdf}
 
 \chapter{Introduction to Control
 Structures}\label{introduction-to-control-structures}
 
-This lesson will cover the \emph{if-then} statement as well as the
-\emph{for} loop and \emph{while} loop. These are two very common control
-structures for all computer programming languages, and are used
+This lesson will cover the \texttt{if-then} statement as well as the
+\texttt{for} loop and \texttt{while} loop. These are two very common
+control structures for all computer programming languages, and are used
 extensively in the R Programming Language.
 
 \section{If - else Statements}\label{if---else-statements}
 
-The \emph{if-then} statement allows us to automate decision points and
+The \texttt{if-then} statement allows us to automate decision points and
 guide the computer through a data flow diagram. The basic syntax is
 given below:
 
@@ -1830,24 +1943,28 @@ if statement:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{if(<condition>)}
+\NormalTok{if(<condition>) \{}
+  \NormalTok{## do something}
+\NormalTok{\}}
 \end{Highlighting}
 \end{Shaded}
 
-The \emph{if-else} statement is most often used in \emph{loops} and
-\emph{functions}. We'll illustrate the use of the \emph{if-then}
+The \texttt{if-else} statement is most often used in \emph{loops} and
+\emph{functions}. We'll illustrate the use of the \texttt{if-then}
 statement in \emph{loops} below.
 
 \section{Loops}\label{loops}
 
 Loops provide a way to systematically walk down a data structure
 (usually a vector, data frame, or list) and accomplish a task. The
-\emph{for} loop and the \emph{while} loop will be the primary loops for
-this class. The \emph{for} loop is used when we know ahead of time a
-finite number of iterations that we need to accomplish.
+\texttt{for} loop and the \texttt{while} loop will be the primary loops
+for this class. The \texttt{for} loop is used when we know ahead of time
+a finite number of iterations that we need to execute (for example, we
+execute a task for every object in a vector/list or every row in a data
+frame).
 
-The \emph{for} loop below iterates over the values 1, 2, 3, 4, and 5 and
-prints each of the values.
+The \texttt{for} loop below iterates over the values 1, 2, 3, 4, and 5
+and prints each of the values.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1904,8 +2021,9 @@ You also don't have to start with 1, or use the letter \emph{i}:
 ## [1] "The year is 2015"
 \end{verbatim}
 
-The \emph{next} command is often used to skip an iteration if a certain
-condition is met. The code below illustrates how to use the \emph{next}
+The \texttt{next} command is often used to skip an iteration if a
+certain condition is met. The code below illustrates how to use the
+\texttt{next}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1927,9 +2045,9 @@ condition is met. The code below illustrates how to use the \emph{next}
 
 Loops can also be nested inside of each other. This is useful when
 working with multiple dimensions (like matrices) or subsets of subsets
-(for example, the outer \emph{for} loop iterates over countries, the
-inner \emph{for} loop iterates over each city in a given country. An
-example of a nested \emph{for} loop is given below, creating a
+(for example, the outer \texttt{for} loop iterates over countries, the
+inner \texttt{for} loop iterates over each city in a given country. An
+example of a nested \texttt{for} loop is given below, creating a
 multiplication table:
 
 \begin{Shaded}
@@ -1961,8 +2079,8 @@ multiplication table:
 ## [10,]   10   20   30   40   50   60   70   80   90   100
 \end{verbatim}
 
-The \emph{while} loop is used when we don't know how many iterations we
-need to go through, but we know that condition that needs to be met
+The \texttt{while} loop is used when we don't know how many iterations
+we need to go through, but we know the condition that needs to be met
 before we are done.
 
 \begin{Shaded}
@@ -1983,39 +2101,40 @@ before we are done.
 ## [1] 25
 \end{verbatim}
 
-To finish out this lesson, we'll provide an example below of a little
-bit more sophisticated code. This function simulates a round of play in
-the boardgame \emph{RISK}. In the boardgame \emph{RISK}, and attacker
-begins an assault against a defender, and the win/loss is adjudicated as
-both players begin rolling the dice and comparing values. The simulation
-below plays through this entire series, declares whether the attacker or
-the defender won, and declares the number of armies left on the board
-for each player. Instead of doing this once, this code plays through
-this 10,000 times, and in the process calculates the probability of the
+To finish out this lesson, we'll provide an example below of a some more
+sophisticated code. This function simulates a round of play in the board
+game \emph{RISK}. In the board game \emph{RISK}, and attacker begins an
+assault against a defender, and the win/loss is adjudicated as both
+players begin rolling dice and comparing values. The simulation below
+plays through this entire series, declares whether the attacker or the
+defender won, and declares the number of armies left on the board for
+each player. Instead of doing this once, this code plays through this
+10,000 times, and in the process calculates the probability of the
 \emph{attacher} winning. This type of process is known as Monte Carlo
-Simulation. Note throughout this function how important \emph{loops} and
-\emph{if-else} statements are:
+Simulation. While you may not fully understand all aspects of this code,
+note throughout this function how important \emph{loops} and
+\texttt{if-else} statements are:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{risk<-function(attacker,defender,}\DataTypeTok{n=}\DecValTok{10000}\NormalTok{) \{}
-  \NormalTok{results <-}\StringTok{ }\KeywordTok{rep}\NormalTok{(}\OtherTok{NA}\NormalTok{,n)}
+\NormalTok{risk <-}\StringTok{ }\NormalTok{function(attacker, defender, }\DataTypeTok{n=}\DecValTok{10000}\NormalTok{) \{}
+  \NormalTok{results <-}\StringTok{ }\KeywordTok{rep}\NormalTok{(}\OtherTok{NA}\NormalTok{, n)}
 \NormalTok{for(j in }\DecValTok{1}\NormalTok{:n)\{}
-\NormalTok{while(attacker>}\DecValTok{1} \NormalTok{&}\StringTok{ }\NormalTok{defender>}\DecValTok{0}\NormalTok{) \{}
- \NormalTok{atk.dice<-}\KeywordTok{min}\NormalTok{(attacker}\DecValTok{-1}\NormalTok{,}\DecValTok{3}\NormalTok{)}
- \NormalTok{def.dice<-}\KeywordTok{min}\NormalTok{(defender,}\DecValTok{2}\NormalTok{)}
- \NormalTok{atk.roll<-}\KeywordTok{ceiling}\NormalTok{(}\KeywordTok{runif}\NormalTok{(atk.dice)*}\DecValTok{6}\NormalTok{)}
- \NormalTok{def.roll<-}\KeywordTok{ceiling}\NormalTok{(}\KeywordTok{runif}\NormalTok{(def.dice)*}\DecValTok{6}\NormalTok{)}
- \NormalTok{atk.roll<-atk.roll[}\KeywordTok{order}\NormalTok{(atk.roll,}\DataTypeTok{decreasing=}\NormalTok{T)]}
- \NormalTok{def.roll<-def.roll[}\KeywordTok{order}\NormalTok{(def.roll,}\DataTypeTok{decreasing=}\NormalTok{T)]}
- \NormalTok{comparison<-}\KeywordTok{min}\NormalTok{(atk.dice,def.dice)}
+\NormalTok{while(attacker >}\StringTok{ }\DecValTok{1} \NormalTok{&}\StringTok{ }\NormalTok{defender >}\StringTok{ }\DecValTok{0}\NormalTok{) \{}
+ \NormalTok{atk.dice <-}\StringTok{ }\KeywordTok{min}\NormalTok{(attacker}\DecValTok{-1}\NormalTok{, }\DecValTok{3}\NormalTok{)}
+ \NormalTok{def.dice <-}\StringTok{ }\KeywordTok{min}\NormalTok{(defender, }\DecValTok{2}\NormalTok{)}
+ \NormalTok{atk.roll <-}\StringTok{ }\KeywordTok{ceiling}\NormalTok{(}\KeywordTok{runif}\NormalTok{(atk.dice)*}\DecValTok{6}\NormalTok{)}
+ \NormalTok{def.roll <-}\StringTok{ }\KeywordTok{ceiling}\NormalTok{(}\KeywordTok{runif}\NormalTok{(def.dice)*}\DecValTok{6}\NormalTok{)}
+ \NormalTok{atk.roll <-}\StringTok{ }\NormalTok{atk.roll[}\KeywordTok{order}\NormalTok{(atk.roll,}\DataTypeTok{decreasing=}\NormalTok{T)]}
+ \NormalTok{def.roll <-}\StringTok{ }\NormalTok{def.roll[}\KeywordTok{order}\NormalTok{(def.roll,}\DataTypeTok{decreasing=}\NormalTok{T)]}
+ \NormalTok{comparison <-}\StringTok{ }\KeywordTok{min}\NormalTok{(atk.dice, def.dice)}
  \NormalTok{for (i in }\DecValTok{1}\NormalTok{:comparison) \{}
-  \NormalTok{if (atk.roll[i]>def.roll[i]) defender<-defender}\DecValTok{-1}
-  \NormalTok{if (atk.roll[i]<=def.roll[i]) attacker<-attacker}\DecValTok{-1}
+  \NormalTok{if (atk.roll[i] >}\StringTok{ }\NormalTok{def.roll[i]) defender <-}\StringTok{ }\NormalTok{defender}\DecValTok{-1}
+  \NormalTok{if (atk.roll[i] <=}\StringTok{ }\NormalTok{def.roll[i]) attacker <-}\StringTok{ }\NormalTok{attacker}\DecValTok{-1}
  \NormalTok{\}}
 \NormalTok{\}}
-\NormalTok{if (defender==}\DecValTok{0}\NormalTok{) results[j]<-}\StringTok{"Attacker"}
-\NormalTok{if (defender>}\DecValTok{0}\NormalTok{) results[j]<-}\StringTok{"Defender"}
+\NormalTok{if (defender==}\DecValTok{0}\NormalTok{) results[j] <-}\StringTok{ "Attacker"}
+\NormalTok{if (defender>}\DecValTok{0}\NormalTok{) results[j] <-}\StringTok{ "Defender"}
 \NormalTok{\}}
 
 \KeywordTok{print}\NormalTok{(}\KeywordTok{paste}\NormalTok{(}\StringTok{"The Probability of the Attacker winning is: "}\NormalTok{,}\KeywordTok{length}\NormalTok{(results[results==}\StringTok{"Attacker"}\NormalTok{])/n))}
@@ -2034,6 +2153,40 @@ Now will illustrate how this function is used:
 \begin{verbatim}
 ## [1] "The Probability of the Attacker winning is:  1"
 \end{verbatim}
+
+\section{Practice Problem}\label{practice-problem-3}
+
+Use the instructions below to determine and visualize the average rating
+by movie genres
+
+\begin{itemize}
+\tightlist
+\item
+  Read the Movie Ratings Data into R
+\item
+  Use the code below to build a vector called \texttt{genres} that
+  contains all unique genre names contained in the data set.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(stringr)}
+\NormalTok{genres <-}\StringTok{ }\KeywordTok{unique}\NormalTok{(}\KeywordTok{unlist}\NormalTok{(}\KeywordTok{str_split}\NormalTok{(rating$genres,}\StringTok{"}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{|"}\NormalTok{)))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  Create a vector object that is the same length as genres to contain
+  the \texttt{mean} ratings
+\item
+  Iterate over your original data set in a \texttt{for} loop, use the
+  \texttt{grep} command to extract the subset that is related to a
+  specific genre, and calculate the mean rating for that genre
+\item
+  Create a barplot visualization of average ratings by genre
+\end{itemize}
 
 \chapter{Introduction to Dates in R}\label{introduction-to-dates-in-r}
 
@@ -2059,11 +2212,11 @@ cloud computer). Below is the system date:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2017-04-10"
+## [1] "2017-04-11"
 \end{verbatim}
 
-Next we will show the system time down to hours, minutes, and seconds in
-Greenwich Mean Time:
+Next we will show the system time down to hours, minutes, and seconds
+with the Time Zone:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2072,11 +2225,10 @@ Greenwich Mean Time:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2017-04-10 23:50:05 EDT"
+## [1] "2017-04-11 22:37:08 EDT"
 \end{verbatim}
 
-Note that if we check the class of either one of these objects, that
-neither of these are character objects:
+Note that that these are not character objects:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2088,7 +2240,7 @@ neither of these are character objects:
 ## [1] "Date"
 \end{verbatim}
 
-This is a special class called the \emph{Date} class. When you read date
+This is a special class called the \emph{Date} class. When you read data
 into R, your fields that have dates are normally converted to the
 \emph{character} class, not the \emph{date} class. In order to convert
 from a \emph{character} class to the \emph{date} class in Base R, use
@@ -2146,14 +2298,14 @@ or checking the difference between dates:
 \end{Shaded}
 
 \begin{verbatim}
-## Time difference of 428 days
+## Time difference of 429 days
 \end{verbatim}
 
-The date formatting code above will only work as described above if my
-input dates are formated exactly as shown, with four-digit years,
-two-digit months and days, and hyphens in between. In order to convert
-dates in a different format, you will use the format parameter and
-describe you unique date format as seen below:
+The date formatting code above will only work as described if my input
+data are formatted exactly as shown, with four-digit years, two-digit
+months and days, and hyphens in between. In order to convert dates in a
+different format, you will use the format parameter and describe your
+unique date format as seen below:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2347,6 +2499,14 @@ Note: UTC and GMT are Greenwich Mean Time (also known as ``Zulu'' time).
 To fully understand how dates work in R, you will need study and
 understand the POSIXct and POSIXlt classes. You can learn more about
 these by typing \texttt{?POSIXct} or \texttt{?POSIXlt} respectively.
+
+\chapter{Exam}\label{exam}
+
+The final exam is a 20 question online test to evaluate your
+understanding of fundamental R principles. This exam is found at
+\url{http://ec2-34-200-213-225.compute-1.amazonaws.com/shiny/rstudio/exam}.
+
+You must attain a 70\% on this exam.
 
 \bibliography{packages.bib,book.bib}
 
