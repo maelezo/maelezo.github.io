@@ -26,7 +26,7 @@
 <meta name="author" content="DSCOE Team">
 
 
-<meta name="date" content="2017-04-11">
+<meta name="date" content="2017-04-25">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -173,7 +173,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="header">
 <h1 class="title">Introduction to R Programming</h1>
 <h4 class="author"><em>DSCOE Team</em></h4>
-<h4 class="date"><em>2017-04-11</em></h4>
+<h4 class="date"><em>2017-04-25</em></h4>
 </div>
 <div id="basic-data-structures" class="section level1">
 <h1><span class="header-section-number">Lesson: 1</span> Basic Data Structures</h1>
@@ -212,7 +212,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <!-- [![Alt text](https://img.youtube.com/vi/VID/0.jpg)](https://www.youtube.com/watch?v=MGDKfUIgtKk) -->
 <p>R is always pointing to a specific directory (or folder) on your computer. This is called your <em>working directory</em>. R will always directly read files and write files to this directory. You can see your working directory by typing</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">getwd</span>()</code></pre></div>
-<pre><code>## [1] &quot;/home/dmbeskow/Dropbox/bookdown-demo-master&quot;</code></pre>
+<pre><code>## [1] &quot;/home/dmbeskow/Dropbox/prerequisite-book&quot;</code></pre>
 <p>If you want to change where your working directory is, you can do this three ways. If you are using RStudio, you can go to <em>Session -&gt; Set Working Directory</em>. You can also use the <em>Files</em> tab to navigate to your desired working directory, and then click on <em>More -&gt; Set as Working Directory</em>. If you want to change your <em>working directory</em> using a command (especially if you’re using base R), then you can type</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">setwd</span>(<span class="st">&quot;C:/Users/beskow/Documents&quot;</span>)  ###Make sure you use Forward Slashes in Windows</code></pre></div>
 <p>If you want to see the names of files in your working directory without opening Windows Explorer, you can use the command</p>
@@ -221,23 +221,24 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ##  [3] &quot;03-visualization.Rmd&quot;    &quot;04-control.Rmd&quot;         
 ##  [5] &quot;05-dates.Rmd&quot;            &quot;06-exam.Rmd&quot;            
 ##  [7] &quot;07-references.Rmd&quot;       &quot;_book&quot;                  
-##  [9] &quot;book.bib&quot;                &quot;bookdown-demo.Rmd&quot;      
-## [11] &quot;bookdown-demo.Rproj&quot;     &quot;_bookdown_files&quot;        
-## [13] &quot;_bookdown.yml&quot;           &quot;_build.sh&quot;              
-## [15] &quot;dataframe.PNG&quot;           &quot;dataWrangling.jpg&quot;      
-## [17] &quot;_deploy.sh&quot;              &quot;DESCRIPTION&quot;            
-## [19] &quot;dplyr.png&quot;               &quot;environment.PNG&quot;        
-## [21] &quot;facebook.png&quot;            &quot;filterColumn.PNG&quot;       
-## [23] &quot;filterRow.PNG&quot;           &quot;index.Rmd&quot;              
-## [25] &quot;KoreanConflict.csv&quot;      &quot;LICENSE&quot;                
-## [27] &quot;list.PNG&quot;                &quot;matrix.PNG&quot;             
-## [29] &quot;_output.yml&quot;             &quot;packages.bib&quot;           
-## [31] &quot;preamble.tex&quot;            &quot;prerequisite-book.Rproj&quot;
-## [33] &quot;rating2.csv&quot;             &quot;README.md&quot;              
-## [35] &quot;screen1.png&quot;             &quot;style.css&quot;              
-## [37] &quot;summer.csv&quot;              &quot;tidyr.png&quot;              
-## [39] &quot;toc.css&quot;                 &quot;vector.PNG&quot;             
-## [41] &quot;whyR2.PNG&quot;               &quot;whyR.PNG&quot;</code></pre>
+##  [9] &quot;book.bib&quot;                &quot;bookdown-demo.epub&quot;     
+## [11] &quot;bookdown-demo.Rmd&quot;       &quot;bookdown-demo.Rproj&quot;    
+## [13] &quot;_bookdown_files&quot;         &quot;_bookdown.yml&quot;          
+## [15] &quot;_build.sh&quot;               &quot;dataframe.PNG&quot;          
+## [17] &quot;dataWrangling.jpg&quot;       &quot;_deploy.sh&quot;             
+## [19] &quot;DESCRIPTION&quot;             &quot;dplyr.png&quot;              
+## [21] &quot;environment.PNG&quot;         &quot;facebook.png&quot;           
+## [23] &quot;filterColumn.PNG&quot;        &quot;filterRow.PNG&quot;          
+## [25] &quot;index.Rmd&quot;               &quot;KoreanConflict.csv&quot;     
+## [27] &quot;LICENSE&quot;                 &quot;list.PNG&quot;               
+## [29] &quot;matrix.PNG&quot;              &quot;_output.yml&quot;            
+## [31] &quot;packages.bib&quot;            &quot;preamble.tex&quot;           
+## [33] &quot;prerequisite-book.Rproj&quot; &quot;rating2.csv&quot;            
+## [35] &quot;README.md&quot;               &quot;screen1.png&quot;            
+## [37] &quot;style.css&quot;               &quot;summer.csv&quot;             
+## [39] &quot;tidyr.png&quot;               &quot;toc.css&quot;                
+## [41] &quot;vector.PNG&quot;              &quot;whyR2.PNG&quot;              
+## [43] &quot;whyR.PNG&quot;</code></pre>
 <p>Note that this gives the names of the files in your working directory, which saves you the time of opening up Windows Explorer to remind yourself what you named your data file.</p>
 </div>
 <div id="types-and-shape-of-data" class="section level2">
@@ -504,6 +505,28 @@ mdat</code></pre></div>
 
 ##or
 ??subset</code></pre></div>
+<p>For those who want to dive deeper into R, go to by the Air Force Institute in Technology tutorials (<a href="https://afit-r.github.io/basics" class="uri">https://afit-r.github.io/basics</a>) and go through</p>
+<ul>
+<li>Introduction to R</li>
+<li>R Basics</li>
+<li>Workflow</li>
+<li>RStudio Projects</li>
+<li>R Markdown</li>
+<li>R Notebook</li>
+<li>Data Types</li>
+<li>Dealing with Numbers</li>
+<li>Dealing with Characters</li>
+<li>Dealing with Factors</li>
+<li>Dealing with NA’s</li>
+<li>Data Structures</li>
+<li>Basics
+<ul>
+<li>Managing Vectors</li>
+</ul></li>
+<li>Managing Lists</li>
+<li>Managing Matrices</li>
+<li>Managing Data Frames</li>
+</ul>
 </div>
 <div id="practice-problem" class="section level2">
 <h2><span class="header-section-number">1.9</span> Practice Problem</h2>

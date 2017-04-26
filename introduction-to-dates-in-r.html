@@ -26,7 +26,7 @@
 <meta name="author" content="DSCOE Team">
 
 
-<meta name="date" content="2017-04-11">
+<meta name="date" content="2017-04-25">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -178,10 +178,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>We will start by showing a few of the date commands that are built into the Base R package (later on we will take a look at the <em>lubridate</em> package <span class="citation">(Grolemund, Spinu, and Wickham <a href="#ref-R-lubridate">2016</a>)</span>, which has some more user friendly functions.)</p>
 <p>First we will demonstrate a couple commands that will generate the current date for your system (either your physical computer or your cloud computer). Below is the system date:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">Sys.Date</span>()</code></pre></div>
-<pre><code>## [1] &quot;2017-04-11&quot;</code></pre>
+<pre><code>## [1] &quot;2017-04-25&quot;</code></pre>
 <p>Next we will show the system time down to hours, minutes, and seconds with the Time Zone:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">Sys.time</span>()</code></pre></div>
-<pre><code>## [1] &quot;2017-04-11 23:13:57 EDT&quot;</code></pre>
+<pre><code>## [1] &quot;2017-04-25 22:42:31 EDT&quot;</code></pre>
 <p>Note that that these are not character objects:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(<span class="kw">Sys.Date</span>())</code></pre></div>
 <pre><code>## [1] &quot;Date&quot;</code></pre>
@@ -202,7 +202,7 @@ myDates</code></pre></div>
 <pre><code>## [1] &quot;2016-02-02&quot; &quot;2016-03-28&quot; &quot;2016-06-23&quot;</code></pre>
 <p>or checking the difference between dates:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">Sys.Date</span>() -<span class="st"> </span>myDates[<span class="dv">1</span>]</code></pre></div>
-<pre><code>## Time difference of 429 days</code></pre>
+<pre><code>## Time difference of 443 days</code></pre>
 <p>The date formatting code above will only work as described if my input data are formatted exactly as shown, with four-digit years, two-digit months and days, and hyphens in between. In order to convert dates in a different format, you will use the format parameter and describe your unique date format as seen below:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create a character vector of random dates</span>
 myDates &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;02/07/2016&quot;</span>, <span class="st">&quot;04/02/2016&quot;</span>,<span class="st">&quot;06/28/2016&quot;</span>)
