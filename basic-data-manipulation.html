@@ -26,7 +26,7 @@
 <meta name="author" content="DSCOE Team">
 
 
-<meta name="date" content="2017-04-25">
+<meta name="date" content="2017-07-21">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -351,7 +351,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="filter-or-subset-data" class="section level2">
 <h2><span class="header-section-number">2.4</span> Filter (or subset) data</h2>
-<p>Extracting a subset of data is one of the most fundamental tasks of data manipulation. There a many different ways to filter data in R. In addition to using the <em>bracket</em> functionality discussed above, you could use the <code>subset</code> command provided in Base R. Today, one of the foremost R Programming Developers (Hadley Wickam) has developed a special packages called <code>dplyr</code> [<span class="citation">(Wickham and Francois <a href="#ref-R-dplyr">2016</a>)</span> and <code>tidyr</code> <span class="citation">(Wickham <a href="#ref-R-tidyr">2016</a>)</span> just for data wrangling. For the sake of simplicity, we will attempt to primarily use these packages for data wrangling in this course.</p>
+<p>Extracting a subset of data is one of the most fundamental tasks of data manipulation. There a many different ways to filter data in R. In addition to using the <em>bracket</em> functionality discussed above, you could use the <code>subset</code> command provided in Base R. Today, one of the foremost R Programming Developers (Hadley Wickam) has developed a special packages called <code>dplyr</code> [<span class="citation">(Wickham et al. <a href="#ref-R-dplyr">2017</a>)</span> and <code>tidyr</code> <span class="citation">(Wickham <a href="#ref-R-tidyr">2017</a>)</span> just for data wrangling. For the sake of simplicity, we will attempt to primarily use these packages for data wrangling in this course.</p>
 <p><img src="dplyr.png" alt="dplyr" /> <img src="tidyr.png" alt="tidyr" /></p>
 <p>Given a two dimensional data structure, we can think of several ways we might want to extract data. The first is to extract rows associated with a certain feature. For example, if we had some basic data from an Army Physical Fitness (APFT) test, we may want to extract rows based on GENDER, as seen below.</p>
 <div class="figure">
@@ -432,10 +432,10 @@ days[<span class="dv">1</span>:<span class="dv">100</span>]</code></pre></div>
 <h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-R-dplyr">
-<p>Wickham, Hadley, and Romain Francois. 2016. <em>Dplyr: A Grammar of Data Manipulation</em>. <a href="https://CRAN.R-project.org/package=dplyr" class="uri">https://CRAN.R-project.org/package=dplyr</a>.</p>
+<p>Wickham, Hadley, Romain Francois, Lionel Henry, and Kirill Müller. 2017. <em>Dplyr: A Grammar of Data Manipulation</em>. <a href="https://CRAN.R-project.org/package=dplyr" class="uri">https://CRAN.R-project.org/package=dplyr</a>.</p>
 </div>
 <div id="ref-R-tidyr">
-<p>Wickham, Hadley. 2016. <em>Tidyr: Easily Tidy Data with ‘Spread()‘ and ‘Gather()‘ Functions</em>. <a href="https://CRAN.R-project.org/package=tidyr" class="uri">https://CRAN.R-project.org/package=tidyr</a>.</p>
+<p>Wickham, Hadley. 2017. <em>Tidyr: Easily Tidy Data with ’Spread()’ and ’Gather()’ Functions</em>. <a href="https://CRAN.R-project.org/package=tidyr" class="uri">https://CRAN.R-project.org/package=tidyr</a>.</p>
 </div>
 <div id="ref-R-lubridate">
 <p>Grolemund, Garrett, Vitalie Spinu, and Hadley Wickham. 2016. <em>Lubridate: Make Dealing with Dates a Little Easier</em>. <a href="https://CRAN.R-project.org/package=lubridate" class="uri">https://CRAN.R-project.org/package=lubridate</a>.</p>

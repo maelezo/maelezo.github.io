@@ -26,7 +26,7 @@
 <meta name="author" content="DSCOE Team">
 
 
-<meta name="date" content="2017-04-25">
+<meta name="date" content="2017-07-21">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -177,7 +177,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">kor &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&#39;KoreanConflict.csv&#39;</span>, <span class="dt">as.is=</span><span class="ot">TRUE</span>)
 kor$BIRTH_YEAR &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(kor$BIRTH_YEAR)
 kor &lt;-<span class="st"> </span>kor[!<span class="kw">is.na</span>(kor$BIRTH_YEAR),]</code></pre></div>
-<p>Now that we have the data in memory, we will use some basic visualizations to explore the data. In this lesson, we will primarily use visualizations from the ggplot2 package <span class="citation">(Wickham and Chang <a href="#ref-R-ggplot2">2016</a>)</span>. If you haven’t installed this package yet, run the command <code>install.packages('ggplot2')</code>.</p>
+<p>Now that we have the data in memory, we will use some basic visualizations to explore the data. In this lesson, we will primarily use visualizations from the ggplot2 package <span class="citation">(Wickham and Chang <a href="#ref-R-ggplot2">2017</a>)</span>. If you haven’t installed this package yet, run the command <code>install.packages('ggplot2')</code>.</p>
 <div id="bar-plot" class="section level2">
 <h2><span class="header-section-number">3.1</span> Bar Plot</h2>
 <p>We will start by producing a basic barplot of categorical variables. First we’ll look at the <code>BRANCH</code> field for the Korean Casualties.</p>
@@ -311,7 +311,6 @@ oly_country2 &lt;-<span class="st"> </span><span class="kw">filter</span>(oly_co
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(oly_country2, <span class="kw">aes</span>(Year,Medal,<span class="dt">group =</span> Country, <span class="dt">color =</span> Country)) +<span class="st"> </span><span class="kw">geom_line</span>() +<span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">&#39;Summer Olympic Metals by Country&#39;</span>)</code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-77-1.png" width="672" /></p>
 <p>This plot highlights a bit of the history of the summer Olympics. Note that Russia began competing in the 1950’s and China didn’t begin competing until the mid-1980’s. While the US has the longest sustained volume, Russia has the highest number in a single year (1980). While Great Britain had a surge at the turn of the century, it has decreased to ~50 medals in the 1920’s, and stayed near this mark for most the century (as has France).</p>
-<p>For those who want to dive deeper into R, go to by the Air Force Institute in Technology tutorials (<a href="https://afit-r.github.io/basics" class="uri">https://afit-r.github.io/basics</a>) and go through the Visualizations Tutorial.</p>
 </div>
 <div id="practice-problem-2" class="section level2">
 <h2><span class="header-section-number">3.5</span> Practice Problem</h2>
@@ -323,7 +322,7 @@ oly_country2 &lt;-<span class="st"> </span><span class="kw">filter</span>(oly_co
 <h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-R-ggplot2">
-<p>Wickham, Hadley, and Winston Chang. 2016. <em>Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</em>. <a href="https://CRAN.R-project.org/package=ggplot2" class="uri">https://CRAN.R-project.org/package=ggplot2</a>.</p>
+<p>Wickham, Hadley, and Winston Chang. 2017. <em>Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</em>.</p>
 </div>
 </div>
             </section>
