@@ -26,7 +26,7 @@
 <meta name="author" content="DSCOE Team">
 
 
-<meta name="date" content="2017-07-21">
+<meta name="date" content="2017-07-24">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -110,17 +110,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#installation"><i class="fa fa-check"></i><b>1.2</b> Installation</a></li>
 <li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#r-environment-and-workspace"><i class="fa fa-check"></i><b>1.3</b> R Environment and Workspace</a></li>
-<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#types-and-shape-of-data"><i class="fa fa-check"></i><b>1.4</b> Types and Shape of Data</a></li>
-<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#data-types"><i class="fa fa-check"></i><b>1.5</b> Data Types</a></li>
-<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#data-structures"><i class="fa fa-check"></i><b>1.6</b> Data Structures</a><ul>
-<li class="chapter" data-level="1.6.1" data-path="index.html"><a href="index.html#vector-data-structure"><i class="fa fa-check"></i><b>1.6.1</b> Vector Data Structure</a></li>
-<li class="chapter" data-level="1.6.2" data-path="index.html"><a href="index.html#data-frame-data-structure"><i class="fa fa-check"></i><b>1.6.2</b> Data Frame Data Structure</a></li>
-<li class="chapter" data-level="1.6.3" data-path="index.html"><a href="index.html#list-data-structure"><i class="fa fa-check"></i><b>1.6.3</b> List Data Structure</a></li>
-<li class="chapter" data-level="1.6.4" data-path="index.html"><a href="index.html#matrix-data-structure"><i class="fa fa-check"></i><b>1.6.4</b> Matrix Data Structure</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#data-types"><i class="fa fa-check"></i><b>1.4</b> Data Types</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#data-structures"><i class="fa fa-check"></i><b>1.5</b> Data Structures</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="index.html"><a href="index.html#vector-data-structure"><i class="fa fa-check"></i><b>1.5.1</b> Vector Data Structure</a></li>
+<li class="chapter" data-level="1.5.2" data-path="index.html"><a href="index.html#data-frame-data-structure"><i class="fa fa-check"></i><b>1.5.2</b> Data Frame Data Structure</a></li>
+<li class="chapter" data-level="1.5.3" data-path="index.html"><a href="index.html#list-data-structure"><i class="fa fa-check"></i><b>1.5.3</b> List Data Structure</a></li>
+<li class="chapter" data-level="1.5.4" data-path="index.html"><a href="index.html#matrix-data-structure"><i class="fa fa-check"></i><b>1.5.4</b> Matrix Data Structure</a></li>
 </ul></li>
-<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#inputoutput-data"><i class="fa fa-check"></i><b>1.7</b> Input/Output Data</a></li>
-<li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#getting-help"><i class="fa fa-check"></i><b>1.8</b> Getting Help</a></li>
-<li class="chapter" data-level="1.9" data-path="index.html"><a href="index.html#practice-problem"><i class="fa fa-check"></i><b>1.9</b> Practice Problem</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#inputoutput-data"><i class="fa fa-check"></i><b>1.6</b> Input/Output Data</a></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#getting-help"><i class="fa fa-check"></i><b>1.7</b> Getting Help</a></li>
+<li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#practice-problem"><i class="fa fa-check"></i><b>1.8</b> Practice Problem</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="basic-data-manipulation.html"><a href="basic-data-manipulation.html"><i class="fa fa-check"></i><b>2</b> Basic Data Manipulation</a><ul>
 <li class="chapter" data-level="2.1" data-path="basic-data-manipulation.html"><a href="basic-data-manipulation.html#data"><i class="fa fa-check"></i><b>2.1</b> Data</a></li>
@@ -178,10 +177,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>We will start by showing a few of the date commands that are built into the Base R package (later on we will take a look at the <em>lubridate</em> package <span class="citation">(Grolemund, Spinu, and Wickham <a href="#ref-R-lubridate">2016</a>)</span>, which has some more user friendly functions.)</p>
 <p>First we will demonstrate a couple commands that will generate the current date for your system (either your physical computer or your cloud computer). Below is the system date:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">Sys.Date</span>()</code></pre></div>
-<pre><code>## [1] &quot;2017-07-21&quot;</code></pre>
+<pre><code>## [1] &quot;2017-07-24&quot;</code></pre>
 <p>Next we will show the system time down to hours, minutes, and seconds with the Time Zone:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">Sys.time</span>()</code></pre></div>
-<pre><code>## [1] &quot;2017-07-21 18:03:42 UTC&quot;</code></pre>
+<pre><code>## [1] &quot;2017-07-24 20:50:30 UTC&quot;</code></pre>
 <p>Note that that these are not character objects:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(<span class="kw">Sys.Date</span>())</code></pre></div>
 <pre><code>## [1] &quot;Date&quot;</code></pre>
@@ -202,7 +201,7 @@ myDates</code></pre></div>
 <pre><code>## [1] &quot;2016-02-02&quot; &quot;2016-03-28&quot; &quot;2016-06-23&quot;</code></pre>
 <p>or checking the difference between dates:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">Sys.Date</span>() -<span class="st"> </span>myDates[<span class="dv">1</span>]</code></pre></div>
-<pre><code>## Time difference of 530 days</code></pre>
+<pre><code>## Time difference of 533 days</code></pre>
 <p>The date formatting code above will only work as described if my input data are formatted exactly as shown, with four-digit years, two-digit months and days, and hyphens in between. In order to convert dates in a different format, you will use the format parameter and describe your unique date format as seen below:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create a character vector of random dates</span>
 myDates &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;02/07/2016&quot;</span>, <span class="st">&quot;04/02/2016&quot;</span>,<span class="st">&quot;06/28/2016&quot;</span>)

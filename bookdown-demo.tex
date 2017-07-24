@@ -124,7 +124,7 @@
   \postauthor{\par}
   \predate{\centering\large\emph}
   \postdate{\par}
-  \date{2017-04-11}
+  \date{2017-07-24}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -158,7 +158,7 @@ and businesses. It is often the tool of choice for data scientists, data
 analysts, quantitative financial analysts, and a myriad of other
 professions. It is used for research at the vast majority of graduate
 schools. It is currently used by companies like Facebook, Google, the NY
-Times and Wallstreet financial organizations. Microsoft has invested
+Times and Wall Street financial organizations. Microsoft has invested
 heavily in integrating R into its desktop and cloud data science tools.
 Google has written the R Style Guide that is widely used. Facebook data
 scientists use R to analyze and understand the vast Facebook social
@@ -174,7 +174,7 @@ Facebook connects the world}
 \subsection{R or Python?}\label{r-or-python}
 
 The world is quickly moving toward leveraging open source data science
-tools rather than proprietary software. Over the last 5 years R and
+tools rather than proprietary software. Over the last five years R and
 Python have risen as the two primary open source tools used by data
 professionals. While there is significant overlap in the capabilities of
 both languages, in general the R Programming language is better at data
@@ -198,9 +198,9 @@ for R that is generally easier to use (R is still the ``engine''; you
 can't run RStudio without R). We will primarily use RStudio in this
 course.
 
-Note that you can also run R from a server in the ``cloud''. The Army
-Data Science Center of Education (DSCOE) provides several tutorials that
-explain how to do this.
+Note that you can also run R from a server in the ``cloud''. The US Army
+\href{https://dscoe.army.mil/}{Data Science Center of Education (DSCOE)}
+provides several tutorials that explain how to do this.
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
@@ -208,13 +208,11 @@ explain how to do this.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
-  Install Base R by going to
-  \url{http://cran.r-project.org/bin/windows/base/}
+  Download and install the current version of R on CRAN.
 \item
-  Install RStudio by going to
-  \url{http://www.rstudio.com/products/rstudio/download/}
+  Download and install the RStudio Desktop Open Source License by going
+  to the RStudio Downloads page and selecting your operating system.
 \end{enumerate}
 
 \section{R Environment and Workspace}\label{r-environment-and-workspace}
@@ -233,7 +231,7 @@ working directory by typing
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "/home/dmbeskow/Dropbox/bookdown-demo-master"
+## [1] "/home/rstudio/bookdown-demo-master"
 \end{verbatim}
 
 If you want to change where your working directory is, you can do this
@@ -260,28 +258,33 @@ opening Windows Explorer, you can use the command
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] "01-fundamentals.Rmd"     "02-munging.Rmd"         
-##  [3] "03-visualization.Rmd"    "04-control.Rmd"         
-##  [5] "05-dates.Rmd"            "06-exam.Rmd"            
-##  [7] "07-references.Rmd"       "_book"                  
-##  [9] "book.bib"                "bookdown-demo_files"    
-## [11] "bookdown-demo.Rmd"       "bookdown-demo.Rproj"    
-## [13] "_bookdown_files"         "_bookdown.yml"          
-## [15] "_build.sh"               "dataframe.PNG"          
-## [17] "dataWrangling.jpg"       "_deploy.sh"             
-## [19] "DESCRIPTION"             "dplyr.png"              
-## [21] "environment.PNG"         "facebook.png"           
-## [23] "filterColumn.PNG"        "filterRow.PNG"          
-## [25] "index.Rmd"               "KoreanConflict.csv"     
-## [27] "LICENSE"                 "list.PNG"               
-## [29] "matrix.PNG"              "_output.yml"            
-## [31] "packages.bib"            "preamble.tex"           
-## [33] "prerequisite-book.Rproj" "rating2.csv"            
-## [35] "README.md"               "screen1.png"            
-## [37] "style.css"               "summer.csv"             
-## [39] "tidyr.png"               "toc.css"                
-## [41] "vector.PNG"              "whyR2.PNG"              
-## [43] "whyR.PNG"
+##  [1] "01-fundamentals.Rmd"      "02-munging.Rmd"          
+##  [3] "03-visualization.Rmd"     "04-control.Rmd"          
+##  [5] "05-dates.Rmd"             "06-exam.Rmd"             
+##  [7] "07-references.Rmd"        "_book"                   
+##  [9] "book.bib"                 "bookdown-demo_files"     
+## [11] "bookdown-demo.Rmd"        "bookdown-demo.Rproj"     
+## [13] "_bookdown_files"          "_bookdown.yml"           
+## [15] "_build.sh"                "ctx-10008"               
+## [17] "dataframe.PNG"            "dataWrangling.jpg"       
+## [19] "DD508009"                 "_deploy.sh"              
+## [21] "DESCRIPTION"              "dplyr.png"               
+## [23] "environment.PNG"          "facebook.png"            
+## [25] "filterColumn.PNG"         "filterRow.PNG"           
+## [27] "index.Rmd"                "KoreanConflict.csv"      
+## [29] "LICENSE"                  "list.PNG"                
+## [31] "matrix.PNG"               "notebooks"               
+## [33] "_output.yml"              "packages.bib"            
+## [35] "pcs"                      "per"                     
+## [37] "persistent-state"         "preamble.tex"            
+## [39] "prerequisite-book.Rproj"  "prop"                    
+## [41] "rating2.csv"              "README.md"               
+## [43] "rmd-outputs"              "s-6E3A07E1"              
+## [45] "saved_source_markers"     "screen1.png"             
+## [47] "session-persistent-state" "style.css"               
+## [49] "summer.csv"               "tidyr.png"               
+## [51] "toc.css"                  "vector.PNG"              
+## [53] "whyR2.PNG"                "whyR.PNG"
 \end{verbatim}
 
 Note that this gives the names of the files in your working directory,
@@ -387,7 +390,7 @@ directory. If you restart R from this working directory, it will load
 all of these items into your workspace. Generally it is not a good idea
 to save your workspace as long as you have all of the code it would take
 to quickly recreate all of the items in your workspace. However, if you
-have some code that takes along time to run, then it is best to save
+have some code that takes a long time to run, then it is best to save
 these items in a workspace so that you don't have to wait hours/days a
 second time to recreate them. For example, I created some R code to
 ``clean'' operational combat data. It took approximately 11 days to
@@ -2159,7 +2162,7 @@ Now will illustrate how this function is used:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "The Probability of the Attacker winning is:  1"
+## [1] "The Probability of the Attacker winning is:  0"
 \end{verbatim}
 
 \section{Practice Problem}\label{practice-problem-3}
@@ -2220,7 +2223,7 @@ cloud computer). Below is the system date:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2017-04-11"
+## [1] "2017-07-24"
 \end{verbatim}
 
 Next we will show the system time down to hours, minutes, and seconds
@@ -2233,7 +2236,7 @@ with the Time Zone:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2017-04-11 23:14:29 EDT"
+## [1] "2017-07-24 15:27:13 UTC"
 \end{verbatim}
 
 Note that that these are not character objects:
@@ -2306,7 +2309,7 @@ or checking the difference between dates:
 \end{Shaded}
 
 \begin{verbatim}
-## Time difference of 429 days
+## Time difference of 533 days
 \end{verbatim}
 
 The date formatting code above will only work as described if my input
@@ -2512,7 +2515,9 @@ these by typing \texttt{?POSIXct} or \texttt{?POSIXlt} respectively.
 
 The final exam is a 20 question online test to evaluate your
 understanding of fundamental R principles. This exam is found at
-\url{http://ec2-34-200-213-225.compute-1.amazonaws.com/shiny/rstudio/exam}.
+\url{http://ec2-54-175-97-147.compute-1.amazonaws.com/shiny/rstudio/exam/}
+Note that at times the ``shiny'' subdomain text will fall out of this
+link. If this happens type it back in and press enter again.
 
 You must attain a 70\% on this exam.
 
