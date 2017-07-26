@@ -7,26 +7,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Introduction to R Programming</title>
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-  <meta name="description" content="This is an introduction to R Programming, and will be used as the pre-requisite for several data science courses">
+  <meta name="description" content="This is an introduction to R programming, and it will be used as the prerequisite for several data science courses.">
   <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
 
   <meta property="og:title" content="Introduction to R Programming" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="This is an introduction to R Programming, and will be used as the pre-requisite for several data science courses" />
+  <meta property="og:description" content="This is an introduction to R programming, and it will be used as the prerequisite for several data science courses." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Introduction to R Programming" />
   
-  <meta name="twitter:description" content="This is an introduction to R Programming, and will be used as the pre-requisite for several data science courses" />
+  <meta name="twitter:description" content="This is an introduction to R programming, and it will be used as the prerequisite for several data science courses." />
   
 
 <meta name="author" content="DSCOE Team">
 
 
-<meta name="date" content="2017-07-24">
+<meta name="date" content="2017-07-26">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -123,7 +123,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="2" data-path="basic-data-manipulation.html"><a href="basic-data-manipulation.html"><i class="fa fa-check"></i><b>2</b> Basic Data Manipulation</a><ul>
 <li class="chapter" data-level="2.1" data-path="basic-data-manipulation.html"><a href="basic-data-manipulation.html#data"><i class="fa fa-check"></i><b>2.1</b> Data</a></li>
-<li class="chapter" data-level="2.2" data-path="basic-data-manipulation.html"><a href="basic-data-manipulation.html#cell-level-data-access"><i class="fa fa-check"></i><b>2.2</b> Cell level data access</a></li>
+<li class="chapter" data-level="2.2" data-path="basic-data-manipulation.html"><a href="basic-data-manipulation.html#cell-level-data-access"><i class="fa fa-check"></i><b>2.2</b> Cell-level Data Access</a></li>
 <li class="chapter" data-level="2.3" data-path="basic-data-manipulation.html"><a href="basic-data-manipulation.html#table-command-and-an-example-of-data-cleaning"><i class="fa fa-check"></i><b>2.3</b> <code>Table</code> Command (and an example of data “cleaning”)</a></li>
 <li class="chapter" data-level="2.4" data-path="basic-data-manipulation.html"><a href="basic-data-manipulation.html#filter-or-subset-data"><i class="fa fa-check"></i><b>2.4</b> Filter (or subset) data</a></li>
 <li class="chapter" data-level="2.5" data-path="basic-data-manipulation.html"><a href="basic-data-manipulation.html#using-the-grep-and-aggregate-commands"><i class="fa fa-check"></i><b>2.5</b> Using the grep and aggregate commands</a></li>
@@ -172,7 +172,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="header">
 <h1 class="title">Introduction to R Programming</h1>
 <h4 class="author"><em>DSCOE Team</em></h4>
-<h4 class="date"><em>2017-07-24</em></h4>
+<h4 class="date"><em>2017-07-26</em></h4>
 </div>
 <div id="basic-data-structures" class="section level1">
 <h1><span class="header-section-number">Lesson: 1</span> Basic Data Structures</h1>
@@ -181,8 +181,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2><span class="header-section-number">1.1</span> The R Programming Language</h2>
 <p>R is an extremely powerful statistical scripting language. It is open-source and used broadly across academia, research organizations, and businesses. It is often the tool of choice for data scientists, data analysts, quantitative financial analysts, and a myriad of other professions. It is used for research at the vast majority of graduate schools. It is currently used by companies like Facebook, Google, the NY Times and Wall Street financial organizations. Microsoft has invested heavily in integrating R into its desktop and cloud data science tools. Google has written the R Style Guide that is widely used. Facebook data scientists use R to analyze and understand the vast Facebook social network.</p>
 <div class="figure">
-<img src="facebook.png" alt="Figure 1: Facebook created this image with R to show how Facebook connects the world" />
-<p class="caption">Figure 1: Facebook created this image with R to show how Facebook connects the world</p>
+<img src="facebook.png" alt="Figure 1: Facebook created this image with R to show how Facebook connects the world." />
+<p class="caption">Figure 1: Facebook created this image with R to show how Facebook connects the world.</p>
 </div>
 <div id="r-or-python" class="section level3">
 <h3><span class="header-section-number">1.1.1</span> R or Python?</h3>
@@ -264,13 +264,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <p>If you’re using base R, you can list the variables that are in your <em>Global Environment</em> using the <code>ls()</code> command:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ls</span>()</code></pre></div>
-<pre><code>##  [1] &quot;apft&quot;           &quot;countries&quot;      &quot;days&quot;           &quot;i&quot;             
-##  [5] &quot;j&quot;              &quot;kor&quot;            &quot;kor2&quot;           &quot;kor_30s&quot;       
-##  [9] &quot;kor_dates&quot;      &quot;KoreanConflict&quot; &quot;kor_female&quot;     &quot;kor_Over30&quot;    
-## [13] &quot;letters&quot;        &quot;mdat&quot;           &quot;myDates&quot;        &quot;myList&quot;        
-## [17] &quot;mymat&quot;          &quot;oly&quot;            &quot;oly_country&quot;    &quot;oly_country2&quot;  
-## [21] &quot;oly_sum&quot;        &quot;rating&quot;         &quot;risk&quot;           &quot;x&quot;             
-## [25] &quot;y&quot;              &quot;year&quot;</code></pre>
+<pre><code>## [1] &quot;kor&quot;  &quot;temp&quot; &quot;x&quot;    &quot;y&quot;</code></pre>
 <p>When you close either RStudio or base R, it will ask you if you want to save your <em>work space</em>. It is essentially asking you if you want to save what is on your workbench. If you choose “yes”, then it will save an *.RData file of everything that is in your workspace in your working directory. If you restart R from this working directory, it will load all of these items into your workspace. Generally it is not a good idea to save your workspace as long as you have all of the code it would take to quickly recreate all of the items in your workspace. However, if you have some code that takes a long time to run, then it is best to save these items in a workspace so that you don’t have to wait hours or even days a second time to recreate them. In general, however, if your clean R code takes only seconds to prepare your data for analysis, it is best to not save your workspace each time to close R or RStudio.</p>
 </div>
 <div id="data-types" class="section level2">
@@ -372,18 +366,18 @@ apft</code></pre></div>
 ## 1  John      M 70 90 14:28
 ## 2 Laura      F 52 85 13:30
 ## 3   Jim      M 49 60 12:36</code></pre>
-<p>It is often the case that you might want to extract a subset of your data frame. If you want just a few rows, we can remove specify which rows to keep.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">apft[<span class="dv">3</span>,] <span class="co">#This returns the 3rd row, all columns.</span></code></pre></div>
-<pre><code>##   Name Gender PU SU   Run
-## 3  Jim      M 49 60 12:36</code></pre>
-<p>If you want just a few columns, we can specify which columns to keep.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">apft[,<span class="dv">1</span>] <span class="co">#This returns all rows, first column.</span></code></pre></div>
-<pre><code>## [1] John  Laura Jim  
-## Levels: Jim John Laura</code></pre>
-<p>Extracting one column in a data frame is typically accomplished with the <code>$</code> operator.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">apft$Name</code></pre></div>
-<pre><code>## [1] John  Laura Jim  
-## Levels: Jim John Laura</code></pre>
+<!-- It is often the case that you might want to extract a subset of your data frame.  If you want just a few rows, we can remove specify which rows to keep. -->
+<!-- ```{r} -->
+<!-- apft[3,] #This returns the 3rd row, all columns. -->
+<!-- ``` -->
+<!-- If you want just a few columns, we can specify which columns to keep. -->
+<!-- ```{r} -->
+<!-- apft[,1] #This returns all rows, first column. -->
+<!-- ``` -->
+<!-- Extracting one column in a data frame is typically accomplished with the ``$`` operator. -->
+<!-- ```{r} -->
+<!-- apft$Name -->
+<!-- ``` -->
 </div>
 <div id="list-data-structure" class="section level3">
 <h3><span class="header-section-number">1.5.3</span> List Data Structure</h3>
@@ -529,12 +523,12 @@ mdat</code></pre></div>
 <p><a href="https://s3.amazonaws.com/dscoe-data/KoreanConflict.csv" class="uri">https://s3.amazonaws.com/dscoe-data/KoreanConflict.csv</a></p>
 <p>If you’re using a cloud environment, you can download the data by running the following command:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">download.file</span>(<span class="st">&quot;https://s3.amazonaws.com/dscoe-data/KoreanConflict.csv&quot;</span>, <span class="dt">destfile =</span> <span class="st">&quot;KoreanConflict.csv&quot;</span>)</code></pre></div>
-<p>Read the file <code>KoreanConflict.csv</code> into your R environment. Explore the data given the commands that we learned during this lesson. At this point, you should be able to discover the following:</p>
+<p>Read the file <code>KoreanConflict.csv</code> into your R environment. Explore the data using the commands that we learned during this lesson. At this point, you should be able to discover the following:</p>
 <ol style="list-style-type: decimal">
 <li>How many observations (rows) are in your Korean Conflict data frame?</li>
 <li>How many variables (columns) describe each observation?</li>
-<li>Which column of your data frame describes an individual’s duty position?</li>
-<li>What is the range of birth years in your Korean Conflict data frame? (Hint: use the min() and max() functions.)</li>
+<li>Which column of your data frame describes an individual’s duty position? (Hint: Try adding a <code>$</code> after the name of your data frame to access a specific column of data.)</li>
+<li>What is the range of birth years in your Korean Conflict data frame? (Hint: Use the <code>min()</code> and <code>max()</code> functions on the appropriate column.)</li>
 </ol>
 
 </div>
