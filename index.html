@@ -264,7 +264,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <p>If you’re using base R, you can list the variables that are in your <em>Global Environment</em> using the <code>ls()</code> command:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ls</span>()</code></pre></div>
-<pre><code>## [1] &quot;kor&quot;  &quot;temp&quot; &quot;x&quot;    &quot;y&quot;</code></pre>
+<pre><code>##  [1] &quot;apft&quot;         &quot;countries&quot;    &quot;days&quot;         &quot;i&quot;           
+##  [5] &quot;j&quot;            &quot;kor&quot;          &quot;kor2&quot;         &quot;kor_30s&quot;     
+##  [9] &quot;kor_dates&quot;    &quot;kor_female&quot;   &quot;kor_Over30&quot;   &quot;letters&quot;     
+## [13] &quot;mdat&quot;         &quot;myDates&quot;      &quot;myList&quot;       &quot;mymat&quot;       
+## [17] &quot;oly&quot;          &quot;oly_country&quot;  &quot;oly_country2&quot; &quot;oly_sum&quot;     
+## [21] &quot;rating&quot;       &quot;risk&quot;         &quot;temp&quot;         &quot;x&quot;           
+## [25] &quot;y&quot;            &quot;year&quot;</code></pre>
 <p>When you close either RStudio or base R, it will ask you if you want to save your <em>work space</em>. It is essentially asking you if you want to save what is on your workbench. If you choose “yes”, then it will save an *.RData file of everything that is in your workspace in your working directory. If you restart R from this working directory, it will load all of these items into your workspace. Generally it is not a good idea to save your workspace as long as you have all of the code it would take to quickly recreate all of the items in your workspace. However, if you have some code that takes a long time to run, then it is best to save these items in a workspace so that you don’t have to wait hours or even days a second time to recreate them. In general, however, if your clean R code takes only seconds to prepare your data for analysis, it is best to not save your workspace each time to close R or RStudio.</p>
 </div>
 <div id="data-types" class="section level2">
