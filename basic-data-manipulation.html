@@ -26,7 +26,7 @@
 <meta name="author" content="DSCOE Team">
 
 
-<meta name="date" content="2017-07-27">
+<meta name="date" content="2017-07-28">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -138,7 +138,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3.5" data-path="basic-visualization.html"><a href="basic-visualization.html#practice-problem-2"><i class="fa fa-check"></i><b>3.5</b> Practice Problem</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="introduction-to-control-structures.html"><a href="introduction-to-control-structures.html"><i class="fa fa-check"></i><b>4</b> Introduction to Control Structures</a><ul>
-<li class="chapter" data-level="4.1" data-path="introduction-to-control-structures.html"><a href="introduction-to-control-structures.html#if---else-statements"><i class="fa fa-check"></i><b>4.1</b> If - else Statements</a></li>
+<li class="chapter" data-level="4.1" data-path="introduction-to-control-structures.html"><a href="introduction-to-control-structures.html#if-statements"><i class="fa fa-check"></i><b>4.1</b> if() Statements</a></li>
 <li class="chapter" data-level="4.2" data-path="introduction-to-control-structures.html"><a href="introduction-to-control-structures.html#loops"><i class="fa fa-check"></i><b>4.2</b> Loops</a></li>
 <li class="chapter" data-level="4.3" data-path="introduction-to-control-structures.html"><a href="introduction-to-control-structures.html#practice-problem-3"><i class="fa fa-check"></i><b>4.3</b> Practice Problem</a></li>
 </ul></li>
@@ -427,8 +427,9 @@ days[<span class="dv">1</span>:<span class="dv">100</span>]</code></pre></div>
 </div>
 <div id="using-the-grep-and-aggregate-commands" class="section level2">
 <h2><span class="header-section-number">2.5</span> Using the grep and aggregate commands</h2>
-<p>The following video illustrates how to use the <code>grep()</code> and <code>aggregate()</code> commands. This video will use the movie rating data that you downloaded in Lesson 1.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">download.file</span>(<span class="st">&quot;https://s3.amazonaws.com/dscoe-data/rating2.csv&quot;</span>, <span class="dt">destfile =</span> <span class="st">&quot;rating2.csv&quot;</span>)</code></pre></div>
+<p>The following video illustrates how to use the <code>grep()</code> and <code>aggregate()</code> commands. This video will use the movie rating data that you downloaded in Lesson 1 as well as a new APFT data set.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">download.file</span>(<span class="st">&quot;https://s3.amazonaws.com/dscoe-data/rating2.csv&quot;</span>, <span class="dt">destfile =</span> <span class="st">&quot;rating2.csv&quot;</span>)
+<span class="kw">download.file</span>(<span class="st">&quot;https://s3.amazonaws.com/dscoe-data/apft.csv&quot;</span>, <span class="dt">destfile =</span> <span class="st">&quot;apft.csv&quot;</span>)</code></pre></div>
 <iframe width="800" height="500" src="https://www.youtube.com/embed/05VPIKAh9tE" frameborder="0" allowfullscreen>
 </iframe>
 </div>

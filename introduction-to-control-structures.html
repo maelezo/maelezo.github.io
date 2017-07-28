@@ -26,7 +26,7 @@
 <meta name="author" content="DSCOE Team">
 
 
-<meta name="date" content="2017-07-27">
+<meta name="date" content="2017-07-28">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -138,7 +138,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3.5" data-path="basic-visualization.html"><a href="basic-visualization.html#practice-problem-2"><i class="fa fa-check"></i><b>3.5</b> Practice Problem</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="introduction-to-control-structures.html"><a href="introduction-to-control-structures.html"><i class="fa fa-check"></i><b>4</b> Introduction to Control Structures</a><ul>
-<li class="chapter" data-level="4.1" data-path="introduction-to-control-structures.html"><a href="introduction-to-control-structures.html#if---else-statements"><i class="fa fa-check"></i><b>4.1</b> If - else Statements</a></li>
+<li class="chapter" data-level="4.1" data-path="introduction-to-control-structures.html"><a href="introduction-to-control-structures.html#if-statements"><i class="fa fa-check"></i><b>4.1</b> if() Statements</a></li>
 <li class="chapter" data-level="4.2" data-path="introduction-to-control-structures.html"><a href="introduction-to-control-structures.html#loops"><i class="fa fa-check"></i><b>4.2</b> Loops</a></li>
 <li class="chapter" data-level="4.3" data-path="introduction-to-control-structures.html"><a href="introduction-to-control-structures.html#practice-problem-3"><i class="fa fa-check"></i><b>4.3</b> Practice Problem</a></li>
 </ul></li>
@@ -171,27 +171,76 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="introduction-to-control-structures" class="section level1">
 <h1><span class="header-section-number">Lesson: 4</span> Introduction to Control Structures</h1>
-<p>This lesson will cover the <code>if-then</code> statement as well as the <code>for</code> loop and <code>while</code> loop. These are two very common control structures for all computer programming languages, and are used extensively in the R Programming Language.</p>
-<div id="if---else-statements" class="section level2">
-<h2><span class="header-section-number">4.1</span> If - else Statements</h2>
-<p>The <code>if-then</code> statement allows us to automate decision points and guide the computer through a data flow diagram. The basic syntax is given below:</p>
+<p>This lesson will cover the <code>if()</code> statement as well as the <code>for()</code> loop and <code>while()</code> loop. These are three very common control structures for all computer programming languages and are used extensively in the R programming language.</p>
+<div id="if-statements" class="section level2">
+<h2><span class="header-section-number">4.1</span> if() Statements</h2>
+<p>The <code>if()</code> statement allows us to automate decision points and guide the computer through a data flow diagram. The basic syntax is given below:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">if(&lt;condition&gt;) {
-  ## do something
-} else if{
-  ## do something else
+  <span class="co"># do something</span>
+} else if(&lt;another condition&gt;){
+  <span class="co"># do something else</span>
 } else {
-  ## do something completely different
+  <span class="co"># do something completely different</span>
 }</code></pre></div>
-<p>The else clause is not always necessary, and many times we just need an if statement:</p>
+<p>Let’s see this in practice:</p>
+<ul>
+<li>Case 1</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">my.number =<span class="st"> </span><span class="dv">1</span>
+if(!<span class="kw">is.numeric</span>(my.number)) {
+  <span class="kw">print</span>(<span class="st">&quot;You were supposed to store a number in &#39;my.number&#39;.&quot;</span>)
+} else if(my.number &gt;=<span class="st"> </span><span class="dv">10</span>){
+  <span class="kw">print</span>(<span class="st">&quot;My number is greater than or equal to 10.&quot;</span>)
+} else {
+  <span class="kw">print</span>(<span class="st">&quot;My number is less than 10.&quot;</span>)
+}</code></pre></div>
+<pre><code>## [1] &quot;My number is less than 10.&quot;</code></pre>
+<ul>
+<li>Case 2</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">my.number =<span class="st"> </span><span class="dv">100</span>
+if(!<span class="kw">is.numeric</span>(my.number)) {
+  <span class="kw">print</span>(<span class="st">&quot;You were supposed to store a number in &#39;my.number&#39;.&quot;</span>)
+} else if(my.number &gt;=<span class="st"> </span><span class="dv">10</span>){
+  <span class="kw">print</span>(<span class="st">&quot;My number is greater than or equal to 10.&quot;</span>)
+} else {
+  <span class="kw">print</span>(<span class="st">&quot;My number is less than 10.&quot;</span>)
+}</code></pre></div>
+<pre><code>## [1] &quot;My number is greater than or equal to 10.&quot;</code></pre>
+<ul>
+<li>Case 3</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">my.number =<span class="st"> &quot;huge&quot;</span>
+if(!<span class="kw">is.numeric</span>(my.number)) {
+  <span class="kw">print</span>(<span class="st">&quot;You were supposed to store a number in &#39;my.number&#39;.&quot;</span>)
+} else if(my.number &gt;=<span class="st"> </span><span class="dv">10</span>){
+  <span class="kw">print</span>(<span class="st">&quot;My number is greater than or equal to 10.&quot;</span>)
+} else {
+  <span class="kw">print</span>(<span class="st">&quot;My number is less than 10.&quot;</span>)
+}</code></pre></div>
+<pre><code>## [1] &quot;You were supposed to store a number in &#39;my.number&#39;.&quot;</code></pre>
+<p>The <code>else</code> clause(s) can grow rather lengthy if many special cases must be handled uniquely, but it is quite often the case that we just need an <code>if()</code> statement. Think of this statement as a gate you must pass in order to run a chunk of code.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">if(&lt;condition&gt;) {
   ## do something
 }</code></pre></div>
-<p>The <code>if-else</code> statement is most often used in <em>loops</em> and <em>functions</em>. We’ll illustrate the use of the <code>if-then</code> statement in <em>loops</em> below.</p>
+<p>An example you might use in practice is boundary checking. Suppose you have age data, and you want to be notified if there is a negative age recorded.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">my.age &lt;-<span class="st"> </span><span class="dv">1</span>
+if(my.age &lt;<span class="st"> </span><span class="dv">0</span>) {
+  <span class="kw">print</span>(<span class="st">&quot;Negative age detected.  Check for data entry error.&quot;</span>)
+}</code></pre></div>
+<p>We didn’t see our notification because we didn’t pass the <code>if()</code> gate that reaches the <code>print()</code> command. We skipped right over it.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">my.age &lt;-<span class="st"> </span>-<span class="dv">1</span>
+if(my.age &lt;<span class="st"> </span><span class="dv">0</span>) {
+  <span class="kw">print</span>(<span class="st">&quot;Negative age detected.  Check for data entry error.&quot;</span>)
+}</code></pre></div>
+<pre><code>## [1] &quot;Negative age detected.  Check for data entry error.&quot;</code></pre>
+<p>Now we get the message because we passed the <code>if()</code> condition.</p>
+<p>The <code>if()</code> statement is most often used in <em>loops</em> and <em>functions</em>. We’ll illustrate the use of the <code>if()</code> statement in <em>loops</em> below.</p>
 </div>
 <div id="loops" class="section level2">
 <h2><span class="header-section-number">4.2</span> Loops</h2>
-<p>Loops provide a way to systematically walk down a data structure (usually a vector, data frame, or list) and accomplish a task. The <code>for</code> loop and the <code>while</code> loop will be the primary loops for this class. The <code>for</code> loop is used when we know ahead of time a finite number of iterations that we need to execute (for example, we execute a task for every object in a vector/list or every row in a data frame).</p>
-<p>The <code>for</code> loop below iterates over the values 1, 2, 3, 4, and 5 and prints each of the values.</p>
+<p>Loops provide a way to systematically walk down a data structure (usually a vector, data frame, or list) and accomplish a task. The <code>for()</code> loop and the <code>while()</code> loop will be the primary loops used in this class. The <code>for()</code> loop is used when we know ahead of time a finite number of iterations that we need to execute. For example, we might execute a task for every object in a vector/list or every row in a data frame.</p>
+<p>The <code>for()</code> loop below iterates over the values 1, 2, 3, 4, and 5 and prints each of the values.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">for(i in <span class="dv">1</span>:<span class="dv">5</span>){
   <span class="kw">print</span>(i)
 }</code></pre></div>
@@ -201,16 +250,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## [1] 4
 ## [1] 5</code></pre>
 <p>Notice that we can also use i to access a value in a vector, a row in a data frame, or an object in a list.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">letters &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>, <span class="st">&quot;e&quot;</span>, <span class="st">&quot;f&quot;</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">letters &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>, <span class="st">&quot;e&quot;</span>)
 
-for(i in <span class="dv">1</span>:<span class="dv">4</span>){
+for(i in <span class="dv">1</span>:<span class="dv">5</span>){
   <span class="kw">print</span>(letters[i])
 }</code></pre></div>
 <pre><code>## [1] &quot;a&quot;
 ## [1] &quot;b&quot;
 ## [1] &quot;c&quot;
-## [1] &quot;d&quot;</code></pre>
-<p>You also don’t have to start with 1, or use the letter <em>i</em>:</p>
+## [1] &quot;d&quot;
+## [1] &quot;e&quot;</code></pre>
+<p>You also don’t have to start with 1 or use the letter <em>i</em>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">for (year in <span class="dv">2010</span>:<span class="dv">2015</span>){
   <span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&quot;The year is&quot;</span>, year))
 }</code></pre></div>
@@ -231,13 +281,15 @@ for(i in <span class="dv">1</span>:<span class="dv">4</span>){
 ## [1] &quot;b&quot;
 ## [1] &quot;d&quot;
 ## [1] &quot;e&quot;</code></pre>
-<p>Loops can also be nested inside of each other. This is useful when working with multiple dimensions (like matrices) or subsets of subsets (for example, the outer <code>for</code> loop iterates over countries, the inner <code>for</code> loop iterates over each city in a given country. An example of a nested <code>for</code> loop is given below, creating a multiplication table:</p>
+<p>Loops can also be nested inside of each other. This is useful when working with multiple dimensions (like matrices) or subsets of subsets (for example, the outer <code>for()</code> loop iterates over countries, the inner <code>for</code> loop iterates over each city in a given country. An example of a nested <code>for</code> loop is given below, creating a multiplication table:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># nested for: multiplication table</span>
-mymat =<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">nrow=</span><span class="dv">10</span>, <span class="dt">ncol=</span><span class="dv">10</span>) <span class="co"># create a 30 x 30 matrix (of 30 rows and 30 columns)</span>
+<span class="co"># create a 10 x 10 matrix (10 rows and 10 columns)</span>
+mymat =<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">nrow=</span><span class="dv">10</span>, <span class="dt">ncol=</span><span class="dv">10</span>) 
 
 for(i in <span class="dv">1</span>:<span class="kw">nrow</span>(mymat)) {  <span class="co"># for each row</span>
   for(j in <span class="dv">1</span>:<span class="kw">ncol</span>(mymat)){ <span class="co"># for each column</span>
-    mymat[i,j] =<span class="st"> </span>i*j     <span class="co"># assign values based on position: product of two indexes</span>
+    <span class="co"># assign values based on position: product of two indices</span>
+    mymat[i,j] =<span class="st"> </span>i*j     
   }
 }
 
@@ -253,58 +305,153 @@ mymat</code></pre></div>
 ##  [8,]    8   16   24   32   40   48   56   64   72    80
 ##  [9,]    9   18   27   36   45   54   63   72   81    90
 ## [10,]   10   20   30   40   50   60   70   80   90   100</code></pre>
-<p>The <code>while</code> loop is used when we don’t know how many iterations we need to go through, but we know the condition that needs to be met before we are done.</p>
+<p>The <code>while()</code> loop is used when we don’t know how many iterations we need to go through, but we know the condition that needs to be met before we are done.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">i &lt;-<span class="st"> </span><span class="dv">5</span>
 while(i &lt;=<span class="st"> </span><span class="dv">25</span>) {
   <span class="kw">print</span>(i)
+  <span class="co"># Here we set a new value of i.</span>
   i &lt;-<span class="st"> </span>i +<span class="st"> </span><span class="dv">5</span>
+  <span class="co"># Now we go back and check the while() condition.</span>
 }</code></pre></div>
 <pre><code>## [1] 5
 ## [1] 10
 ## [1] 15
 ## [1] 20
 ## [1] 25</code></pre>
-<p>To finish out this lesson, we’ll provide an example below of a some more sophisticated code. This function simulates a round of play in the board game <em>RISK</em>. In the board game <em>RISK</em>, and attacker begins an assault against a defender, and the win/loss is adjudicated as both players begin rolling dice and comparing values. The simulation below plays through this entire series, declares whether the attacker or the defender won, and declares the number of armies left on the board for each player. Instead of doing this once, this code plays through this 10,000 times, and in the process calculates the probability of the <em>attacher</em> winning. This type of process is known as Monte Carlo Simulation. While you may not fully understand all aspects of this code, note throughout this function how important <em>loops</em> and <code>if-else</code> statements are:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">risk &lt;-<span class="st"> </span>function(attacker, defender, <span class="dt">n=</span><span class="dv">10000</span>) {
+<p>To finish out this lesson, we’ll provide an example of some more sophisticated code. This function simulates a round of play in the board game <em>RISK</em>. In the board game <em>RISK</em>, an attacker begins an assault against a defender, and the win/loss is adjudicated as both players begin rolling dice and comparing values. The simulation below plays through this entire series, declares whether the attacker or the defender won, and declares the number of armies left on the board for each player. Instead of doing this once, this code plays through this 10,000 times, and in the process calculates the probability of the <em>attacker</em> winning. This type of process is known as Monte Carlo Simulation. While you may not fully understand all aspects of this code, note throughout this function how important <em>loops</em> and <code>if()</code> statements are:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Our function will take as inputs the number of armies the </span>
+<span class="co"># attacker has, the number of armies the defender has, and </span>
+<span class="co"># the desired number of simulated trials the user wants.</span>
+risk &lt;-<span class="st"> </span>function(attacker, defender, n) {
+  <span class="co"># Create an empty vector to hold the simulated win/loss outcomes.</span>
   results &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, n)
-for(j in <span class="dv">1</span>:n){
-while(attacker &gt;<span class="st"> </span><span class="dv">1</span> &amp;<span class="st"> </span>defender &gt;<span class="st"> </span><span class="dv">0</span>) {
- atk.dice &lt;-<span class="st"> </span><span class="kw">min</span>(attacker<span class="dv">-1</span>, <span class="dv">3</span>)
- def.dice &lt;-<span class="st"> </span><span class="kw">min</span>(defender, <span class="dv">2</span>)
- atk.roll &lt;-<span class="st"> </span><span class="kw">ceiling</span>(<span class="kw">runif</span>(atk.dice)*<span class="dv">6</span>)
- def.roll &lt;-<span class="st"> </span><span class="kw">ceiling</span>(<span class="kw">runif</span>(def.dice)*<span class="dv">6</span>)
- atk.roll &lt;-<span class="st"> </span>atk.roll[<span class="kw">order</span>(atk.roll,<span class="dt">decreasing=</span>T)]
- def.roll &lt;-<span class="st"> </span>def.roll[<span class="kw">order</span>(def.roll,<span class="dt">decreasing=</span>T)]
- comparison &lt;-<span class="st"> </span><span class="kw">min</span>(atk.dice, def.dice)
- for (i in <span class="dv">1</span>:comparison) {
-  if (atk.roll[i] &gt;<span class="st"> </span>def.roll[i]) defender &lt;-<span class="st"> </span>defender<span class="dv">-1</span>
-  if (atk.roll[i] &lt;=<span class="st"> </span>def.roll[i]) attacker &lt;-<span class="st"> </span>attacker<span class="dv">-1</span>
- }
-}
-if (defender==<span class="dv">0</span>) results[j] &lt;-<span class="st"> &quot;Attacker&quot;</span>
-if (defender&gt;<span class="dv">0</span>) results[j] &lt;-<span class="st"> &quot;Defender&quot;</span>
-}
-
-<span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&quot;The Probability of the Attacker winning is: &quot;</span>,<span class="kw">length</span>(results[results==<span class="st">&quot;Attacker&quot;</span>])/n))
+  <span class="co"># Create restoration values to reset the armies after each trial.</span>
+  attacker.reset &lt;-<span class="st"> </span>attacker
+  defender.reset &lt;-<span class="st"> </span>defender
+  <span class="co"># For n total trials... </span>
+  for(j in <span class="dv">1</span>:n){
+    attacker &lt;-<span class="st"> </span>attacker.reset
+    defender &lt;-<span class="st"> </span>defender.reset
+    <span class="co"># ...as long as the attacker has more than one army</span>
+    <span class="co"># and the defender has an army...</span>
+    while(attacker &gt;<span class="st"> </span><span class="dv">1</span> &amp;<span class="st"> </span>defender &gt;<span class="st"> </span><span class="dv">0</span>) {
+      <span class="co"># Both players pick up the right number of dice...</span>
+      atk.dice &lt;-<span class="st"> </span><span class="kw">min</span>(attacker<span class="dv">-1</span>, <span class="dv">3</span>)
+      def.dice &lt;-<span class="st"> </span><span class="kw">min</span>(defender, <span class="dv">2</span>)
+      <span class="co"># Both players roll the right number of dice...</span>
+      atk.roll &lt;-<span class="st"> </span><span class="kw">ceiling</span>(<span class="kw">runif</span>(atk.dice)*<span class="dv">6</span>)
+      def.roll &lt;-<span class="st"> </span><span class="kw">ceiling</span>(<span class="kw">runif</span>(def.dice)*<span class="dv">6</span>)
+      <span class="co"># Each player&#39;s dice are sorted from greatest to least...</span>
+      atk.roll &lt;-<span class="st"> </span>atk.roll[<span class="kw">order</span>(atk.roll,<span class="dt">decreasing=</span>T)]
+      def.roll &lt;-<span class="st"> </span>def.roll[<span class="kw">order</span>(def.roll,<span class="dt">decreasing=</span>T)]
+      <span class="co"># Compare the correct numbers of dice for each player...</span>
+      comparison &lt;-<span class="st"> </span><span class="kw">min</span>(atk.dice, def.dice)
+      for (i in <span class="dv">1</span>:comparison) {
+        if (atk.roll[i] &gt;<span class="st"> </span>def.roll[i]){
+          <span class="co"># The attacker won, so the defender loses an army...</span>
+          defender &lt;-<span class="st"> </span>defender<span class="dv">-1</span>
+        }
+        if (atk.roll[i] &lt;=<span class="st"> </span>def.roll[i]){
+          <span class="co"># The defender won, so the attacker loses an army...</span>
+          attacker &lt;-<span class="st"> </span>attacker<span class="dv">-1</span>
+        }
+      }
+    }
+    <span class="co"># If the defender ran out of armies, the attacker wins.</span>
+    if (defender==<span class="dv">0</span>) results[j] &lt;-<span class="st"> &quot;Attacker&quot;</span>
+    <span class="co"># If the defender did not run out of armies, the defender wins.</span>
+    if (defender&gt;<span class="dv">0</span>) results[j] &lt;-<span class="st"> &quot;Defender&quot;</span>
+  }
+  <span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&quot;The Probability of the Attacker winning is:&quot;</span>,
+              <span class="kw">length</span>(results[results==<span class="st">&quot;Attacker&quot;</span>])/n))
 }</code></pre></div>
-<p>Now will illustrate how this function is used:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">risk</span>(<span class="dt">attacker=</span><span class="dv">12</span>,<span class="dt">defender=</span><span class="dv">6</span>)</code></pre></div>
-<pre><code>## [1] &quot;The Probability of the Attacker winning is:  1&quot;</code></pre>
+<p>The statement below illustrates how to use the <code>risk()</code> function:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">risk</span>(<span class="dt">attacker=</span><span class="dv">2</span>,<span class="dt">defender=</span><span class="dv">1</span>,<span class="dt">n=</span><span class="dv">1000</span>)</code></pre></div>
+<pre><code>## [1] &quot;The Probability of the Attacker winning is: 0.412&quot;</code></pre>
 </div>
 <div id="practice-problem-3" class="section level2">
 <h2><span class="header-section-number">4.3</span> Practice Problem</h2>
-<p>Use the instructions below to determine and visualize the average rating by movie genres</p>
+<p>Use the instructions below to determine and visualize the average rating by movie genres.</p>
 <ul>
-<li>Read the Movie Ratings Data into R</li>
+<li>Read the movie ratings data you downloaded in Section 1.6 into R.</li>
 <li>Use the code below to build a vector called <code>genres</code> that contains all unique genre names contained in the data set.</li>
 </ul>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(stringr)
-genres &lt;-<span class="st"> </span><span class="kw">unique</span>(<span class="kw">unlist</span>(<span class="kw">str_split</span>(rating$genres,<span class="st">&quot;</span><span class="ch">\\</span><span class="st">|&quot;</span>)))</code></pre></div>
+rating &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;rating2.csv&quot;</span>, <span class="dt">as.is =</span> <span class="ot">TRUE</span>)
+genre.list &lt;-<span class="st"> </span><span class="kw">unique</span>(<span class="kw">unlist</span>(<span class="kw">str_split</span>(rating$genres,<span class="st">&quot;</span><span class="ch">\\</span><span class="st">|&quot;</span>)))</code></pre></div>
+<p>Try to execute the following steps before looking at the code solution that shows just one way to accomplish this task.</p>
 <ul>
-<li>Create a vector object that is the same length as genres to contain the <code>mean</code> ratings</li>
-<li>Iterate over your original data set in a <code>for</code> loop, use the <code>grep</code> command to extract the subset that is related to a specific genre, and calculate the mean rating for that genre</li>
-<li>Create a barplot visualization of average ratings by genre</li>
+<li>Create a vector object that is the same length as genres to contain the <code>mean</code> ratings.</li>
+<li>Iterate over your original data set in a <code>for()</code> loop, use the <code>grep()</code> command to extract the subset that is related to a specific genre, and calculate the mean rating for that genre.</li>
+<li>Create a barplot visualization of average ratings by genre.</li>
 </ul>
+<hr />
+<p>SOLUTION: This is just one way to achieve the desired result. We’ll step through each requirement with incremental explanations along the way.</p>
+<ul>
+<li>Create a vector object that is the same length as genres to contain the <code>mean</code> ratings.</li>
+</ul>
+<p>The <code>rep()</code> command replicates a value or set of values a specified number of times. The <code>length()</code> command returns the number of elements in a vector or list object. We can use these two functions to create a vector of the correct length.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># We&#39;ll replicate NA as our placeholder to be replaced by actual numbers.</span>
+mean.ratings &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>,<span class="kw">length</span>(genre.list))</code></pre></div>
+<ul>
+<li>Iterate over your original data set in a <code>for()</code> loop, use the <code>grep()</code> command to extract the subset that is related to a specific genre, and calculate the mean rating for that genre. Note that many movies are classified as belonging to multiple genres, and we will allow each movie’s rating to contribute to the calculation of the mean rating for any genre to which it belongs.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># It appears most movies are associated with multiple genres.</span>
+<span class="kw">head</span>(rating$genres)</code></pre></div>
+<pre><code>## [1] &quot;Adventure|Animation|Children|Comedy|Fantasy&quot;    
+## [2] &quot;Action|Drama|War&quot;                               
+## [3] &quot;Action|Adventure|Sci-Fi&quot;                        
+## [4] &quot;Adventure|Animation|Children|Drama|Musical|IMAX&quot;
+## [5] &quot;Drama|War&quot;                                      
+## [6] &quot;Adventure|Animation|Children|Comedy|Musical&quot;</code></pre>
+<p>We might be tempted to set up our <code>for()</code> loop from <code>1:length(rating)</code>, but that would only loop over the 7 objects inside our <code>rating</code> data frame. We might also be tempted to loop over the 283,886 movies, which we can do by looping over any column of <code>rating</code> (e.g, <code>1:length(rating$title)</code>. What we really want to do is loop over our vector of genres (i.e., <code>1:length(genre.list)</code>). This approach will let us complete an assessment of each genre all at once instead of moving through our list movie by movie.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># We&#39;ll iterate over our vector of genres.</span>
+for(i in <span class="dv">1</span>:<span class="kw">length</span>(genre.list)){
+  <span class="co"># Let&#39;s filter out any movies that don&#39;t belong to the genre of interest.</span>
+  <span class="co"># First identify which movie indices correspond to the genre of interest.</span>
+  this.genre.indices &lt;-<span class="st"> </span><span class="kw">grep</span>(genre.list[i],rating$genres)
+  <span class="co"># Now let&#39;s compute and store the mean rating of this genre.</span>
+  <span class="co"># We&#39;ll compute the mean of &quot;rating&quot; column in the rows we just identifed.</span>
+  mean.ratings[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(rating[this.genre.indices,<span class="st">&quot;rating&quot;</span>])
+}</code></pre></div>
+<p>Now we have a vector of mean ratings, which we can combine with the genre list into a data frame and display as text here.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df.rating &lt;-<span class="st"> </span><span class="kw">data.frame</span>(genre.list,mean.ratings)
+df.rating</code></pre></div>
+<pre><code>##            genre.list mean.ratings
+## 1           Adventure     3.481759
+## 2           Animation     3.579487
+## 3            Children     3.420384
+## 4              Comedy     3.358041
+## 5             Fantasy     3.464419
+## 6              Action     3.452660
+## 7               Drama     3.641138
+## 8                 War     3.690831
+## 9              Sci-Fi     3.499506
+## 10            Musical     3.521342
+## 11               IMAX     3.524784
+## 12            Romance     3.457683
+## 13             Horror     3.261698
+## 14           Thriller     3.502560
+## 15              Crime     3.654538
+## 16            Western     3.601346
+## 17            Mystery     3.639658
+## 18        Documentary     3.552925
+## 19          Film-Noir     3.780648
+## 20 (no genres listed)     2.929924</code></pre>
+<ul>
+<li>Create a barplot visualization of average ratings by genre.</li>
+</ul>
+<p>We already wrote some code to do exactly this with our Olympic medal data. Let’s repurpose our old code and adjust it as necessary. Don’t reinvent the wheel!</p>
+<p>Note: You’ll see the argument <code>stat=&quot;identity&quot;</code> in the <code>geom_bar()</code> command. You have the option to let R compute means, counts, etc., from our chosen y-data. In our case, we already did that. The <code>&quot;identity&quot;</code> option means we just want the values to be presented exactly as we’ve provided them.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
+<span class="kw">ggplot</span>(df.rating, <span class="kw">aes</span>(<span class="dt">x=</span>genre.list,<span class="dt">y=</span>mean.ratings)) +
+<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">stat=</span><span class="st">&quot;identity&quot;</span>, <span class="dt">color=</span><span class="st">&quot;white&quot;</span>, <span class="dt">fill=</span><span class="st">&quot;blue&quot;</span>) +
+<span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&#39;Mean Movie Rating by Genre&#39;</span>) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">theme</span>(<span class="dt">plot.title =</span> <span class="kw">element_text</span>(<span class="dt">hjust =</span> <span class="fl">0.5</span>)) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Mean Rating&quot;</span>) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Movie Genres&quot;</span>) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">90</span>, <span class="dt">hjust =</span> <span class="dv">1</span>))</code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-107-1.png" width="672" /></p>
 
 </div>
 </div>

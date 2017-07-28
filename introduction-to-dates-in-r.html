@@ -26,7 +26,7 @@
 <meta name="author" content="DSCOE Team">
 
 
-<meta name="date" content="2017-07-27">
+<meta name="date" content="2017-07-28">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -138,7 +138,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3.5" data-path="basic-visualization.html"><a href="basic-visualization.html#practice-problem-2"><i class="fa fa-check"></i><b>3.5</b> Practice Problem</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="introduction-to-control-structures.html"><a href="introduction-to-control-structures.html"><i class="fa fa-check"></i><b>4</b> Introduction to Control Structures</a><ul>
-<li class="chapter" data-level="4.1" data-path="introduction-to-control-structures.html"><a href="introduction-to-control-structures.html#if---else-statements"><i class="fa fa-check"></i><b>4.1</b> If - else Statements</a></li>
+<li class="chapter" data-level="4.1" data-path="introduction-to-control-structures.html"><a href="introduction-to-control-structures.html#if-statements"><i class="fa fa-check"></i><b>4.1</b> if() Statements</a></li>
 <li class="chapter" data-level="4.2" data-path="introduction-to-control-structures.html"><a href="introduction-to-control-structures.html#loops"><i class="fa fa-check"></i><b>4.2</b> Loops</a></li>
 <li class="chapter" data-level="4.3" data-path="introduction-to-control-structures.html"><a href="introduction-to-control-structures.html#practice-problem-3"><i class="fa fa-check"></i><b>4.3</b> Practice Problem</a></li>
 </ul></li>
@@ -174,23 +174,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>We often see dates and times in data. Often each record (or row) of data is connected to at least one date or time. Similar to Microsoft Excel, R has a special class or format that it uses to work with dates.</p>
 <div id="dates-with-base-r" class="section level2">
 <h2><span class="header-section-number">5.1</span> Dates with Base R</h2>
-<p>We will start by showing a few of the date commands that are built into the Base R package (later on we will take a look at the <em>lubridate</em> package <span class="citation">(Grolemund, Spinu, and Wickham <a href="#ref-R-lubridate">2016</a>)</span>, which has some more user friendly functions.)</p>
+<p>We will start by showing a few of the date commands that are built into the Base R package. Later on we will take a look at the <em>lubridate</em> package <span class="citation">(Grolemund, Spinu, and Wickham <a href="#ref-R-lubridate">2016</a>)</span>, which has some really handy, user-friendly functions.</p>
 <p>First we will demonstrate a couple commands that will generate the current date for your system (either your physical computer or your cloud computer). Below is the system date:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">Sys.Date</span>()</code></pre></div>
-<pre><code>## [1] &quot;2017-07-27&quot;</code></pre>
+<pre><code>## [1] &quot;2017-07-28&quot;</code></pre>
 <p>Next we will show the system time down to hours, minutes, and seconds with the Time Zone:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">Sys.time</span>()</code></pre></div>
-<pre><code>## [1] &quot;2017-07-27 18:54:57 UTC&quot;</code></pre>
+<pre><code>## [1] &quot;2017-07-28 19:38:00 UTC&quot;</code></pre>
 <p>Note that that these are not character objects:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(<span class="kw">Sys.Date</span>())</code></pre></div>
 <pre><code>## [1] &quot;Date&quot;</code></pre>
-<p>This is a special class called the <em>Date</em> class. When you read data into R, your fields that have dates are normally converted to the <em>character</em> class, not the <em>date</em> class. In order to convert from a <em>character</em> class to the <em>date</em> class in Base R, use the code below.</p>
+<p>This is a special class called the <em>Date</em> class. When you read data into R, your fields that have dates are normally converted to the <em>character</em> class, not the <em>Date</em> class. In order to convert from a <em>character</em> class to the <em>Date</em> class in Base R, use the code below.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create a character vector of random dates</span>
 myDates &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;2016-02-07&quot;</span>, <span class="st">&quot;2016-04-02&quot;</span>,<span class="st">&quot;2016-06-28&quot;</span>)
-
 <span class="co">#Convert character vector to dates vector</span>
 myDates &lt;-<span class="st"> </span><span class="kw">as.Date</span>(myDates)
-
 myDates</code></pre></div>
 <pre><code>## [1] &quot;2016-02-07&quot; &quot;2016-04-02&quot; &quot;2016-06-28&quot;</code></pre>
 <p>Now we’ll check to make sure we’ve converted it to the proper class of data:</p>
@@ -201,14 +199,12 @@ myDates</code></pre></div>
 <pre><code>## [1] &quot;2016-02-02&quot; &quot;2016-03-28&quot; &quot;2016-06-23&quot;</code></pre>
 <p>or checking the difference between dates:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">Sys.Date</span>() -<span class="st"> </span>myDates[<span class="dv">1</span>]</code></pre></div>
-<pre><code>## Time difference of 536 days</code></pre>
+<pre><code>## Time difference of 537 days</code></pre>
 <p>The date formatting code above will only work as described if my input data are formatted exactly as shown, with four-digit years, two-digit months and days, and hyphens in between. In order to convert dates in a different format, you will use the format parameter and describe your unique date format as seen below:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create a character vector of random dates</span>
 myDates &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;02/07/2016&quot;</span>, <span class="st">&quot;04/02/2016&quot;</span>,<span class="st">&quot;06/28/2016&quot;</span>)
-
 <span class="co">#Convert character vector to dates vector</span>
 myDates &lt;-<span class="st"> </span><span class="kw">as.Date</span>(myDates, <span class="dt">format =</span> <span class="st">&quot;%m/%d/%Y&quot;</span>)
-
 myDates</code></pre></div>
 <pre><code>## [1] &quot;2016-02-07&quot; &quot;2016-04-02&quot; &quot;2016-06-28&quot;</code></pre>
 <p>Below is a table of all the most common date components and their abbreviation.</p>
@@ -295,10 +291,10 @@ myDates</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(lubridate)
 <span class="kw">ymd</span>(<span class="st">&quot;2016-02-07&quot;</span>, <span class="st">&quot;2016-04-02&quot;</span>,<span class="st">&quot;2016-06-28&quot;</span>)</code></pre></div>
 <pre><code>## [1] &quot;2016-02-07&quot; &quot;2016-04-02&quot; &quot;2016-06-28&quot;</code></pre>
-<p>Now we’ll use <code>mdy</code> to convert in a different format.</p>
+<p>Now we’ll use <code>mdy</code> to convert from a different format.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mdy</span>(<span class="st">&quot;02/07/2016&quot;</span>, <span class="st">&quot;04/02/2016&quot;</span>,<span class="st">&quot;06/28/2016&quot;</span>)</code></pre></div>
 <pre><code>## [1] &quot;2016-02-07&quot; &quot;2016-04-02&quot; &quot;2016-06-28&quot;</code></pre>
-<p>To show the flexibility of this code, we’ll do a final example with <code>dmy</code> used on a different format data:</p>
+<p>To show the flexibility of this code, we’ll do a final example with <code>dmy</code> used on a different date format:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dmy</span>(<span class="st">&quot;1jan16&quot;</span>, <span class="st">&quot;1nov15&quot;</span>,<span class="st">&quot;15mar17&quot;</span>)</code></pre></div>
 <pre><code>## [1] &quot;2016-01-01&quot; &quot;2015-11-01&quot; &quot;2017-03-15&quot;</code></pre>
 <p>The <em>lubridate</em> commands can be expanded to include hour-minute-seconds as well</p>
@@ -312,7 +308,7 @@ myDates</code></pre></div>
 </div>
 <div id="posixct-and-posixlt" class="section level2">
 <h2><span class="header-section-number">5.3</span> POSIXct and POSIXlt</h2>
-<p>To fully understand how dates work in R, you will need study and understand the POSIXct and POSIXlt classes. You can learn more about these by typing <code>?POSIXct</code> or <code>?POSIXlt</code> respectively.</p>
+<p>To fully understand how dates work in R, you will need to study and understand the POSIXct and POSIXlt classes. You can learn more about these by typing <code>?POSIXct</code> or <code>?POSIXlt</code> respectively.</p>
 
 </div>
 </div>
