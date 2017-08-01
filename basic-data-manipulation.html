@@ -26,7 +26,7 @@
 <meta name="author" content="DSCOE Team">
 
 
-<meta name="date" content="2017-07-28">
+<meta name="date" content="2017-08-01">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -422,14 +422,14 @@ days[<span class="dv">1</span>:<span class="dv">100</span>]</code></pre></div>
 <p>Looking at the first few entries makes us wonder. The very first entry had 18,253 days between the incident and the fatality. In fact, if you look closer at the dates, you will see that this Service Member had an incident on 12 April 1951, but wasn’t considered a fatality until 2 April 2001. Let’s plot a histogram of the difference in days (you’ll learn this command during the next lesson):</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#plot histogram of difference in days</span>
 <span class="kw">hist</span>(<span class="kw">as.numeric</span>(days), <span class="dt">main=</span><span class="st">&quot;Histogram of Difference in Days&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Days&quot;</span>)  </code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-62-1.png" width="672" /></p>
 <p>Here we see that there are many casualties that have a fatality day around the year 2000. If you look at the original data, you will see that the first Service Member in the data (an Air Force Captain) is listed with an incident year of 1951 and <code>FATALITY_DATE</code> in 2001. Notice that the FATALITY status is <em>DECLARED DEAD</em>. This officer, as part of a bombing group, must have had MIA status for several decades until finally “declared dead” in 2001. The “declared dead” date became his fatality date, which means it would be difficult to evaluate the temporal aspect of wound care without addressing the presence of lengthy MIA periods in the data.</p>
 </div>
 <div id="using-the-grep-and-aggregate-commands" class="section level2">
 <h2><span class="header-section-number">2.5</span> Using the grep and aggregate commands</h2>
 <p>The following video illustrates how to use the <code>grep()</code> and <code>aggregate()</code> commands. This video will use the movie rating data that you downloaded in Lesson 1 as well as a new APFT data set.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">download.file</span>(<span class="st">&quot;https://s3.amazonaws.com/dscoe-data/rating2.csv&quot;</span>, <span class="dt">destfile =</span> <span class="st">&quot;rating2.csv&quot;</span>)
-<span class="kw">download.file</span>(<span class="st">&quot;https://s3.amazonaws.com/dscoe-data/apft.csv&quot;</span>, <span class="dt">destfile =</span> <span class="st">&quot;apft.csv&quot;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">download.file</span>(<span class="st">&quot;https://s3.amazonaws.com/dscoe-data-2/rating2.csv&quot;</span>, <span class="dt">destfile =</span> <span class="st">&quot;rating2.csv&quot;</span>)
+<span class="kw">download.file</span>(<span class="st">&quot;https://s3.amazonaws.com/dscoe-data-2/apft.csv&quot;</span>, <span class="dt">destfile =</span> <span class="st">&quot;apft.csv&quot;</span>)</code></pre></div>
 <iframe width="800" height="500" src="https://www.youtube.com/embed/05VPIKAh9tE" frameborder="0" allowfullscreen>
 </iframe>
 </div>

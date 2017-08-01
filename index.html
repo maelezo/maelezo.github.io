@@ -26,7 +26,7 @@
 <meta name="author" content="DSCOE Team">
 
 
-<meta name="date" content="2017-07-28">
+<meta name="date" content="2017-08-01">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -172,7 +172,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="header">
 <h1 class="title">Introduction to R Programming</h1>
 <h4 class="author"><em>DSCOE Team</em></h4>
-<h4 class="date"><em>2017-07-28</em></h4>
+<h4 class="date"><em>2017-08-01</em></h4>
 </div>
 <div id="basic-data-structures" class="section level1">
 <h1><span class="header-section-number">Lesson: 1</span> Basic Data Structures</h1>
@@ -265,17 +265,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <p>If you’re using base R, you can list the variables that are in your <em>Global Environment</em> using the <code>ls()</code> command:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ls</span>()</code></pre></div>
-<pre><code>##  [1] &quot;apft&quot;               &quot;country.list&quot;       &quot;days&quot;              
-##  [4] &quot;df.rating&quot;          &quot;genre.list&quot;         &quot;genres&quot;            
-##  [7] &quot;i&quot;                  &quot;j&quot;                  &quot;kor&quot;               
-## [10] &quot;kor2&quot;               &quot;kor_30s&quot;            &quot;kor_dates&quot;         
-## [13] &quot;kor_female&quot;         &quot;kor_Over30&quot;         &quot;letters&quot;           
-## [16] &quot;mdat&quot;               &quot;mean.ratings&quot;       &quot;my.age&quot;            
-## [19] &quot;myDates&quot;            &quot;myList&quot;             &quot;mymat&quot;             
-## [22] &quot;my.number&quot;          &quot;oly&quot;                &quot;oly_country&quot;       
-## [25] &quot;oly_country2&quot;       &quot;oly_sum&quot;            &quot;rating&quot;            
-## [28] &quot;risk&quot;               &quot;this.genre&quot;         &quot;this.genre.indices&quot;
-## [31] &quot;x&quot;                  &quot;y&quot;                  &quot;year&quot;</code></pre>
+<pre><code>##  [1] &quot;apft&quot;         &quot;country.list&quot; &quot;days&quot;         &quot;genre.list&quot;  
+##  [5] &quot;i&quot;            &quot;j&quot;            &quot;kor&quot;          &quot;kor2&quot;        
+##  [9] &quot;kor_30s&quot;      &quot;kor_dates&quot;    &quot;kor_female&quot;   &quot;kor_Over30&quot;  
+## [13] &quot;letters&quot;      &quot;mdat&quot;         &quot;my.age&quot;       &quot;myList&quot;      
+## [17] &quot;mymat&quot;        &quot;my.number&quot;    &quot;oly&quot;          &quot;oly_country&quot; 
+## [21] &quot;oly_country2&quot; &quot;oly_sum&quot;      &quot;rating&quot;       &quot;risk&quot;        
+## [25] &quot;x&quot;            &quot;y&quot;            &quot;year&quot;</code></pre>
 <p>When you close either RStudio or base R, it will ask you if you want to save your <em>work space</em>. It is essentially asking you if you want to save what is on your workbench. If you choose “yes”, then it will save an *.RData file of everything that is in your workspace in your working directory. If you restart R from this working directory, it will load all of these items into your workspace. Generally it is not a good idea to save your workspace as long as you have all of the code it would take to quickly recreate all of the items in your workspace. However, if you have some code that takes a long time to run, then it is best to save these items in a workspace so that you don’t have to wait hours or even days a second time to recreate them. In general, however, if your clean R code takes only seconds to prepare your data for analysis, it is best to not save your workspace each time to close R or RStudio.</p>
 </div>
 <div id="data-types" class="section level2">
@@ -302,7 +298,7 @@ y</code></pre></div>
 ## Levels: female male</code></pre>
 <p>Now watch when I try to plot this:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(y)</code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
 <p>It plots a barchart because R recognizes this as a factor and has a numeric value associated with both of the “levels” in the factor.</p>
 </div>
 <div id="data-structures" class="section level2">
@@ -441,7 +437,7 @@ mdat</code></pre></div>
 <h2><span class="header-section-number">1.6</span> Input/Output Data</h2>
 <p>Now that we have all of that done, let’s learn how to read and write data. To do this with some fun data, let’s read in some data on movie ratings. This data contains users that rated movies in 2015. Each record (or row) represents a single user rating a single movie. Movies can have more than one rating, and users can rate more than one movie. Make sure you download the data at <a href="https://s3.amazonaws.com/dscoe-data/rating2.csv" class="uri">https://s3.amazonaws.com/dscoe-data/rating2.csv</a> and follow along with this tutorial.</p>
 <p>Note: if you’re using a cloud environment, you can download the data by running the following command:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">download.file</span>(<span class="st">&quot;https://s3.amazonaws.com/dscoe-data/rating2.csv&quot;</span>, <span class="dt">destfile =</span> <span class="st">&quot;rating2.csv&quot;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">download.file</span>(<span class="st">&quot;https://s3.amazonaws.com/dscoe-data-2/rating2.csv&quot;</span>, <span class="dt">destfile =</span> <span class="st">&quot;rating2.csv&quot;</span>)</code></pre></div>
 <p>We use the command <em>read.csv</em> to read in data. We also make sure to assign this to an object name (in this case, the object name is <code>rating</code>).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">rating &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;rating2.csv&quot;</span>, <span class="dt">as.is =</span> <span class="ot">TRUE</span>)</code></pre></div>
 <p>The <code>as.is = TRUE</code> parameter ensures that any character data is formatted into a <em>character</em> vector rather than a <em>factor</em> vector. You can always convert from the provided character strings to another data type, but using <code>as.is=TRUE</code> ensures you know your starting point. One example where the factor interpretation is particularly problematic involves working with dates.</p>
@@ -533,7 +529,7 @@ mdat</code></pre></div>
 <p>Download the Korean War Casualty Data by downloading the Comma Separated Value (CSV) file here:</p>
 <p><a href="https://s3.amazonaws.com/dscoe-data/KoreanConflict.csv" class="uri">https://s3.amazonaws.com/dscoe-data/KoreanConflict.csv</a></p>
 <p>If you’re using a cloud environment, you can download the data by running the following command:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">download.file</span>(<span class="st">&quot;https://s3.amazonaws.com/dscoe-data/KoreanConflict.csv&quot;</span>, <span class="dt">destfile =</span> <span class="st">&quot;KoreanConflict.csv&quot;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">download.file</span>(<span class="st">&quot;https://s3.amazonaws.com/dscoe-data-2/KoreanConflict.csv&quot;</span>, <span class="dt">destfile =</span> <span class="st">&quot;KoreanConflict.csv&quot;</span>)</code></pre></div>
 <p>Read the file <code>KoreanConflict.csv</code> into your R environment. Explore the data using the commands that we learned during this lesson. At this point, you should be able to discover the following:</p>
 <ol style="list-style-type: decimal">
 <li>How many observations (rows) are in your Korean Conflict data frame?</li>
